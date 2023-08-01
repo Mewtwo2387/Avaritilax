@@ -1,0 +1,32 @@
+Logo font:
+Linebrush
+Zalland
+Ingame font:
+SAO UI
+A256 Baal:
+u/kisk123
+A259 Keq:
+u/k88hbq
+https://www.reddit.com/r/Genshin_Impact/comments/k88hbq/finished_making_keqing_as_a_pixel_sprite/
+
+255 60 0 red
+255 120 0 orange
+255 240 0 yellow
+200 255 0 lime
+100 255 0 green
+0 255 200 aqua
+0 240 255 cyan
+0 120 255 light blue
+0 0 255 blue
+120 0 255 violet
+
+
+
+266666s
+254000s
+171700b
+243500s
+202000b
+266666s
+164630b
+266666s

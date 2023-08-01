@@ -1,0 +1,61 @@
+@keyframes boing{
+    0% {
+    transform: scale(1, 1);
+    }
+    25% {
+    transform: scale(1.1, 0.9);
+    }
+    50% {
+    transform: scale(1, 1);
+    }
+    75% {
+    transform: scale(0.9, 1.1);
+    }
+    100% {
+    transform: scale(1, 1);
+    }
+}
+@keyframes tinyboing{
+    0% {
+    transform: scale(1, 1);
+    }
+    50% {
+    transform: scale(0.95, 0.95);
+    }
+    100% {
+    transform: scale(1, 1);
+    }
+}
+@keyframes breath{
+    0% {
+    transform: scale(1, 1);
+    }
+    10% {
+    transform: scale(0.95,0.95);
+    }
+    20% {
+    transform: scale(1, 1);
+    }
+    50% {
+    transform: scale(1, 1);
+    }
+    60% {
+    transform: scale(0.97,1.03);
+    }
+    70% {
+    transform: scale(1, 1);
+    }
+    100% {
+    transform: scale(1, 1);
+    }
+}
+@keyframes fade{
+    0% {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    100%{
+    opacity: 0;
+    transform: translateY(-200px);
+    }
+}

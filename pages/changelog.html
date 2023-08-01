@@ -1,0 +1,669 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/others.css">
+</head>
+<body style="background-repeat: repeat-y;">
+    
+<!-- TO BE COMPLETED IN 1.1.x
+    MINING:
+    mining items tooltip
+    mining pick req
+    remaining mining images
+    stamina progression
+    more mining achi
+    gradual change between stone and darkstone
+    pickaxe durability
+    reset mine after soulgem
+
+    ALCHEMY:
+    alchemy
+    alchemy achi
+    utility items
+    more smeltables and alloyables
+
+    MISSIONS:
+    mission set 2
+    mission notif / green
+
+    SAVE:
+    auto save
+    save notif
+
+    OTHERS:
+    buy max
+    changelog rewrite
+    achi icon for no icon
+    tab icons
+    the 90 achi icons
+    main menu button icons
+    food div background
+
+    BUGS:
+    015 clicking the red popup texts counted as a snorlax click
+-->
+
+<!-- TO BE COMPLETED IN FUTURE VERSIONS
+    isekai portal
+    ascension
+    evo shop
+    research
+    daily reward
+    offline income
+    levels
+    new ui
+    storyline
+    more settings
+    export/import data
+-->
+
+<h1 class="block">Alpha 1.1.2</h1>
+<p class="block">19/1/2023 - </p>
+<h2 class="h2s changelog-additions block">Additions</h2>
+<p class="ps block multiline"><b>Alchemy</b></p>
+<p class="ps block multiline changelog-quote">"And there goes our eventuallies from 1.1.0"</p>
+<p class="ps block multiline">- Introduced Alchemy
+    - Fishsticks can now be obtained by buying fishballs
+    - Items can be crafted using catalyst and resources from mining
+        - 7 x pickaxe recipes
+            - Fishstick pickaxe is crafted from 5 fishsticks and 10 catalyst providing a first pickaxe to mine stone.
+            - Stone and darkstone pickaxe is crafted from 2 fishsticks, 3 stone/darkstone, 20 catalyst, and 1 darkstuff for darkstone pickaxe, which can mine haematite.
+                - Darkstone should be more duarble than stone, but durability isn't a thing for now.
+            - Iron (smelted from haematite) pickaxe mines silver and gold, Lumium (alloy of silver and gold) pickaxe mines diamond, Diamond pickaxe mines soulstone, and Soulstone pickaxe mines soulgem. They cost 50/100/200/333 catalyst, 4//8/16/32 fishstick, and 3/3/3/2 of the respective resources.
+        - 3 x furnace recipes
+            - Simple furnace cost 50 catalyst and 8 stone
+            - Advanced furnace cost 200 catalyst and 4 refined stone, 4 refined darkstone. It gives a 20% chance of double output.
+            - Dark furnace cost 200 catalyst and 8 refined darkstone, 8 darkstuff. It gives a 40% chance to burn the item and 60% chance to double output
+            - Furnace smelts raw ores into material
+        - 1 x refinary recipe
+            - Simple refinary cost 200 catalyst, 8 stone, and 4 iron
+            - Refinary refine material into it's refined form
+        - 1 x alloy furnace recipe
+            - Simple alloy furnace cost 200 catalyst, 8 stone, and 4 iron
+            - Alloy furnace mixes material into other material
+        - 7 x statue recipes
+            - Stone, darkstone, iron, silver, gold, diamond, crystal statues, each cost 10 of the refined material (except crystal which cannot be refined) and 10 darkstuff for darkstone, and 100/100/200/400/600/800/1000 catalyst.
+            - It does nothing right now
+    - Furnace can smelt certain stuff using some time and some coal
+        - Haematite is the only smeltable item for now, costing 1 coal and 8 seconds, giving iron.
+        - I have no idea what else it should be able to smelt for now
+    - Refinary can refine certain stuff using some time and some coal
+        - Refining stone and darkstone cost 1 coal and 8 seconds
+        - Refining iron, silver, and gold cost 2 coal and 16 seconds
+        - Refining diamond cost 4 coal and 32 seconds
+    - Alloy furnace can mix certain stuff using some time and some catalyst
+        - Lumium is the only mixable item for now, costing 10 catalyst, 10 seconds, 1 gold, 1 silver
+        - Maybe iron+coal for steel later</p>
+<h2 class="h2s changelog-changes block">Changes</h2>
+<p class="ps block multiline"><b>Mining</b>
+- A strong enough pickaxe is now required to mine. Pickaxe doesn't have durability for now.</p>
+<br>
+<br>
+
+
+
+<h1 class="block">Alpha 1.1.1</h1>
+<p class="block">13/1/2023 - 17/1/2023</p>
+<p class="ps block multiline changelog-quote multiline">"And it's been 4 months. again."
+"I have no idea what happened in this spagetti code so imma do some small additions first"
+"smallest update ever, as small as hu tao"</p>
+<h2 class="h2s changelog-additions block">Additions</h2>
+<p class="ps block multiline"><b>Multi-Buy</b>
+- Introduced the "Buy x10" and "Buy x100" button for basic shop food
+- The progress bar now have 3 layers, green fills up when you can buy 1, blue when 10, and orange when 100.
+    - The next layer only shows up when the first layer is completed, although approximately 4% of the blue bar should be filled up when green is filled.
+<b>Achievements</b>
+- 2 x multi-buy achievements (1915-1916)
+    - You get them when you buy x10 and x100 for the first time.</p>
+<p class="ps changelog-quote block">&nbsp;&nbsp;&nbsp;&nbsp;"+2 missing icons!"</p>
+<p class="ps block multiline">- 9 x mining achievements (1001-1009)
+    - Achievement for mining stone, dakrstone, haematite, silver, gold, coal, fishball, crystal, and diamond for the first time</p>
+<p class="ps changelog-quote block">&nbsp;&nbsp;&nbsp;&nbsp;"+9 missing icons!"</p>
+<p class="ps block multiline">- 3 x saving achievements (1902-1904)
+    - Achievement for saving 1/50/250 times
+    - This achi is planned a long time ago and it's logo was made, but i'm too lazy to spend 2 minutes adding it. Now here it is.
+- Finished 1 icon (0000)</p>
+<img class="img50px" src="../assets/images/icons-achievements/A000.png">
+<p class="ps block multiline"><b>Mining</b>
+- Finished 9 icons for the ores
+
+    </p>
+<h2 class="h2s changelog-fixes block">Fixes</h2>
+<p class="ps block">- 016 missions shows set 1 after reload even when it's done</p>
+
+
+
+<br>
+<br>
+
+
+
+<h1 class="block">Alpha 1.1.0 Mining, Alchemy, Missions, and More</h1>
+<p class="block">05/09/2022 - 16/09/2022</p>
+<p class="ps block multiline changelog-quote multiline">"1.1 was planned to be the mining update 7 months ago. And then alchemy goes with it, otherwise mined stuff are useless. And then missions also goes with it to unlock mining. And then a lot of stuff is introduced. And then a lot of stuff is no longer introduced because I can't add that much in one update. So now we only have basic mining and missions in 1.1.0."
+"Gonna finish the rest in 1.1.1, 1.1.2, etc. Why not just put them in one update, when it doesn't matter at all because the game isn't even released? Because big version number cool."
+"I have a 'Finish up the 90 achi icons' comment in the code, from Feburary. And it's gonna stay there for longer, I'm not finishing them... yet"</p>
+<h2 class="h2s changelog-additions block">Additions</h2>
+<p class="ps block multiline"><b>Missions</b>
+- Introduced missions
+    - There are currently only 1 set of missions.
+        - Each set, supposingly, should all contain 10 missions</p>
+    <p class="ps changelog-quote block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"KEYWORD: SUPPOSINGLY"</p>
+    <p class="ps block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Set 1 missions include:
+            - Reach a total of 50000 KG
+            - Reach 50 KGPS from fishballs
+            - Reach 125 KGPS from burgers
+            - Reach 250 KGPS from restaurants
+            - Obtain 2 Factories
+            - Click 2222 times
+            - Hit a Critical Click 50 times
+            - Buy 12 Upgrades
+            - Get 24 achievements
+            - Attempt to enter the mines
+    - All mission gives some catalyst when completed, and some also gives a multiplier or other items as a reward
+        - Multipliers from missions stack addictively with each other, but multiplicatively with other Multipliers
+            - For example, getting two +5% KGPS multipliers from missions and buying a +5% KGPS upgrade will grant a +15.5% bonus (1.1x1.05)
+        - This is the first thing to grant catalyst, although the label is in the game since it exist
+    - Completing a mission set gives more rewards and unlocks something
+        - Set 1: 250 catalyst, 1 golden fishball, unlocks alchemy and mining
+        - Set 2: (probably) 500 catalyst, 2 golden fishball, unlocks isekai portal 
+        - Set 3: (probably) 750 catalyst, 3 golden fishball, unlocks ascension
+<p class="ps changelog-quote block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Ascension wasn't something that was considered before. But after 7 months all of a sudden I want to have some ascension upgrades before you can move on to shop 2 or 3. Mostly bacuse now that wiping save is easier"</p>
+
+<p class="ps block multiline"><b>Mining</b>
+- Introduced mining
+    - The mining area is 40(depth)x20(width)
+        - Stone generates above layer 20, and deepstone 20 or below.
+            - A fishstick pickaxe is required to mine stone. eventually.
+            - There are currently no transition between them, but there will be. eventually.
+            - Stone can be refined. eventually.
+        - Coal generates above layer 20, on the right side only.
+            - A fishstick pickaxe is required to mine coal. eventually.
+        - Haematite generates most frequently at layers 10-19, and less frequently below.
+            - A stone pick is required to mine haematite. eventually.
+            - Haematite can be smelted into iron. eventually.
+            - Iron can be refined. eventually.
+        - Silver generates most frequently at layers 20-29, and less frequently below.
+            - An iron pick is required to mine silver. eventually.
+            - Silver can be refined. eventually.
+        - Gold generates at layers 30-39.
+            - A silver pick is required to mine gold. eventually.
+            - Silver and gold can form lumium. eventually.
+            - Gold can be refined. eventually.
+        - Golden Fishballs generates at layers 30-39.
+            - A lumium pick is required to mine golden fishballs. eventually.
+        - Diamonds and Crystals generates at layers 20-39, on the right side only. 
+            - A lumium pick is required to mine them. eventually.
+        - Soulstone and Soulgem generate at the bottom right corner
+            - A diamond pick is required to mine them. eventually.
+            - Refining a soulgem allows the mining map to be ascended. But we dont talk about that yet. Not even "eventually"
+    - Stuff generates, you can mine them, but pickaxes and such comes "eventually" as you can see above. The mined stuff are currently useless without alchemy. <i>It comes eventually.</i>
+    - 1 Stamina is required to mine 1 block. This value can be upgraded eventually.
+        - 2 achievements give 1 stamina. This value can be upgraded eventually.
+</p>
+<p class="ps changelog-quote multiline block">&nbsp;&nbsp;&nbsp;&nbsp;"Fun fact: There are 20 eventuallies from this chunk of text"
+    "Another fun fact: I will probably not complete them within this month."</p>
+<h2 class="h2s changelog-changes block">Changes</h2>
+<p class="ps block multiline">- removed the placeholder text in the achievements tab. why is it there?
+- added critical clicks, upgrades, and achievements to statistics</p>
+<h2 class="h2s changelog-fixes block">Fixes</h2>
+<p class="ps block multiline">- 014 there turns out to be no bugs from all the change previously but i gotta put something here so i named it bug #14</p>
+<p class="ps changelog-quote block">"The biggest problem from the previous update is that i can't find a problem, which is pretty problematic, some bug is gotta be in this game."</p>
+
+
+
+<br>
+<br>
+
+
+
+<h1 class="block">Alpha pre-1.1.0</h1>
+<p class="block">02/09/2022,05/09/2022</p>
+<p class="ps block multiline changelog-quote">"Ok so I'm back to this thing after 6 months... what is this? what is that? what was i doing? how did i implement this and that back then? wh- and do i still need to draw more achi icons? ok whatever. I'm adding new features instead."
+"I abandoned SC4 for Porject Keqei, let's hope I won't abandon Project Keqei for SC4. Damn i need 48 hours a day to deal with these"
+"Wait, where is my bug tracker? How did i number the bugs back then, and what bugs are unfixed?"
+"You know what, I enjoy writing this changelog much more than coding the game, even though i'm certain no one else will read this chunk of text"
+"And I also enjoy reading my past changelogs after 6 months. I guess it's like a <del>dairy</del> diary"
+"Ok why am i still writing all these and not get into coding..."</p>
+<h2 class="h2s changelog-changes block">Changes</h2>
+<p class="ps block multiline"><b>Save</b>
+- One single gameData object is used to save all the gameData, stringified and parse everytime
+    - Which means that no need to separately save localStorage items anymore. I can now add as many vars as i want without updating save.js
+    - Which also means that I have to add "GD." to all variables in the code. Which also means that I probably missed some. So more bugs.
+    - Food is now stored in the same array. No more separate variables named after the food. Easier to update all food. And easier to miss some of the old code that still contained those variables. More bugs.
+</p>
+<h2 class="h2s changelog-fixes block">Fixes</h2>
+<p class="ps block multiline">Fixes? I broke everything, probably.</p>
+<br>
+<br>
+<h1 class="block">Alpha 1.0.3</h1>
+<p class="block">??/2/2022</p>
+<p class="ps block multiline changelog-quote">"POV: You got writers:block'd again and stopped dev'ing for a while. Expecting more bloques in the future."
+"But no one will care anyways right?"</p>
+<h2 class="h2s changelog-additions block">Additions</h2>
+<p class="ps block multiline"><b>Animations</b>
+- Clicking on the snorlax now have a floating text showing the amount of money earned
+    - The floating text moves up and fade out
+    - The text will be in red if it's a critical click. So now you can actually see the effect of crit upgrades
+"And it looks like damage numbers, clicking the snorlax seems like attacking it"
+<b>Achievements</b>
+- Added 5 CRate achis (241-245) and 5 CDmg achis (231-235)
+    - Currently you can only get 35% CRate and 350% CDmg from the upgrades, so some cannot be unlocked. Later you can build crit from other stuff (mainly isekai portal)
+- Added the icons for the 4 new click achis in a1.0.1</p>
+<img class="img50px" src="../assets/images/icons-achievements/A206.png"><img class="img50px" src="../assets/images/icons-achievements/A207.png"><img class="img50px" src="../assets/images/icons-achievements/A208.png"><img class="img50px" src="../assets/images/icons-achievements/A209.png">
+<p class="ps block multiline">- Finished 23 out of 90 food achi icons</p>
+<img class="img50px" src="../assets/images/icons-achievements/A251.png"><img class="img50px" src="../assets/images/icons-achievements/A252.png"><img class="img50px" src="../assets/images/icons-achievements/A253.png"><img class="img50px" src="../assets/images/icons-achievements/A254.png"><img class="img50px" src="../assets/images/icons-achievements/A255.png"><img class="img50px" src="../assets/images/icons-achievements/A256.png"><img class="img50px" src="../assets/images/icons-achievements/A257.png"><img class="img50px" src="../assets/images/icons-achievements/A258.png"><img class="img50px" src="../assets/images/icons-achievements/A259.png"><img class="img50px" src="../assets/images/icons-achievements/A260.png"><br>
+<img class="img50px" src="../assets/images/icons-achievements/A276.png"><img class="img50px" src="../assets/images/icons-achievements/A277.png"><img class="img50px" src="../assets/images/icons-achievements/A278.png"><img class="img50px" src="../assets/images/icons-achievements/A279.png"><img class="img50px" src="../assets/images/icons-achievements/A280.png"><img class="img50px" src="../assets/images/icons-achievements/A281.png"><img class="img50px" src="../assets/images/icons-achievements/A282.png"><br>
+<img class="img50px" src="../assets/images/icons-achievements/A301.png"><img class="img50px" src="../assets/images/icons-achievements/A302.png"><img class="img50px" src="../assets/images/icons-achievements/A303.png"><img class="img50px" src="../assets/images/icons-achievements/A304.png"><img class="img50px" src="../assets/images/icons-achievements/A305.png"><img class="img50px" src="../assets/images/icons-achievements/A306.png"><br>
+<h2 class="h2s changelog-changes block">Changes</h2>
+<p class="ps block multiline"><b>Display</b>
+- Scroll bar is now hidden cause it's ugly. Still can scroll.
+- Sometimes you cannot determine if the percentage bar is fully filled, and be like "Why doesn't the buy button work?" when trying to buy the food. So the percentage bars of the food items now have a lighter colour when it's completely full.
+"Money and Cost label: Am I a joke to you?" 
+<b>Achievements</b>
+5th click achi is now back to 2k instead of 2.5k
+<b>Notifs</b>
+- The height of notifs are now not fixed, it can be taller if the achi name is too long and became 2 rows
+<b>Stuff so minor that it shouldn't be on changelog</b>
+- Added a '+' sign to the crit dmg stat
+- Replaced achi if/else with switch/case, cause why not. Increases the chance of bugs, cause I expecially suck at stuff without brackets.
+"Semicolons >> Colons"
+"And that's why i never use python"</p>
+<h2 class="h2s changelog-fixes block">Fixes</h2>
+<p class="ps block multiline">007 Achi names longer than the notif box will be in 2 rows, which covered the achi description
+011 Game doesn't load properly in a1.0.2
+012 8 Farms is required instead of 9 for the 2nd achi
+013 Portal upgrades costed x10/x100 base price, when it should cost x20/x200 as it triples KGPS.</p>
+<br>
+<br>
+<h1 class="block">Alpha 1.0.2</h1>
+<p class="block">24/2/2022</p>
+<h2 class="h2s changelog-additions block">Additions</h2>
+<p class="ps block multiline"><b>Info & Settings</b>
+- Added a new (12th) tab in the game - Info & Settings</p>
+<p class="ps changelog-quote block">" '12th tab' , as if there are actually 12 tabs with content in the game. Currently there's only basic shop, up, achi, and this one that actually have content"</p>
+<p class="ps block multiline">- Shows statistics and options
+    - Currently the only 'setting' is toggling debug Mode
+    - The statistics for KG, Money, Total Money, raw KGPS, KGPS multi, Total KGPS, raw MPC, MPC multi, total MPC, Shop item amount, Crit rate, Crit dmg, and clicks count are shown.
+<b>Upgrades</b>
+- Added 1 more KGPS upgrade and 1 cost upgrade for each food item (18 upgrades total), to a total of 6 KGPS and 2 cost upgrade per food
+    - Unlocked from the 150 achi (6th achi for most food, 8th for portal)
+    - The KGPS upgrade cost x1t base price while the cost upgrade cost x500b.
+    - The cost upgrade reduces cost by 30%.
+    - As the 150th food already cost 750b times base price, these prices are actually quite low.
+<b>Animations</b>
+- Added a small boing when hovering any button, and a slighly larger boing when clicking it. (Including the snorlax button)
+    - There is also a small boing when clicking clickable divs.
+- Snorlax now "breaths" slightly every 2 seconds.</p>
+<p class="ps changelog-quote block">"BOING BOINGS. Now how do we only make that part boing?"</p>
+<h2 class="h2s changelog-changes block">Changes</h2>
+<p class="ps block multiline"><b>Achievements</b>
+- With the total money tracked for stats, money achis now count total money instead of wallet money.
+<b>Loading</b>
+- Apparently javascript calls functions parallelly, so when initializing it might tick and update before achis are completely init'd if it took too long. To solve the issue, they are now called one after another in a chain.
+    - Achis and ups actually take a few seconds to load, however the game starts before they are fully loaded, resulting in a few second of freezing in the previous versions. So now there is now a loading screen, the game will start only when everything is loaded.
+<b>Display</b>
+- Navigation tabs are now very slightly translucent instead of completely transparent. Hovering at it makes it less transparent. Same for the 2 login buttons.
+<b>Planned Content</b>
+- Bururururger in evolution shop is replaced with Rare Burgergummies, like rare candy in SC2
+    - There aren't much to talk about in ups and achis as bururururgers are too similar to burgers.
+    - Bururururger is now a basic shop burger upgrade instead</p>
+<h2 class="h2s changelog-fixes block">Fixes</h2>
+<p class="ps block multiline">001 The game starts off with a few seconds of freezing, unable to interact with anything and the fonts are wrong in those few seconds
+008 Notif cross button is shown on start
+009 Some of the 4th/5th KGPS upgrades cost x50k/50m base price instead of x100k/100m
+010 Achi might reset due to ticking and updating before achi loading, as javascript runs function parallelly.</p>
+<br>
+<br>
+<h1 class="block">Alpha 1.0.1</h1>
+<p class="block">22/2/2022 (2) 22</p>
+<p class="ps changelog-quote block">"zero twosday but better."</p>
+<h2 class="h2s changelog-additions block">Additions</h2>
+<p class="ps block multiline"><b>Achievements</b>
+- Added a few more click achis. Currently there are 9 click achis at 100/250/500/1k/2.5k/5k/10k/15k/20k
+    - This gives a total of 206 working achis in game.
+<b>Upgrades</b>
+- Added 2 more KGPS upgrades for each food item (18 upgrades total), to a total of 5 KGPS and 1 cost upgrade per food
+    - Unlocked from the 50 and 100 achi (4th and 5th achi for most food, 4th and 6th achi for portal)
+    - The 4th upgrade cost x100k and the fifth cost x100m base price, which is x100 and x1000 the previous upgrade respectively.
+</p>
+<h2 class="h2s changelog-changes block">Changes</h2>
+<p class="ps block multiline"><b>Upgrades</b>
+- Completely replaced the manual click upgrades.
+    - Instead of giving an x% chance of registering 2 clicks, it is replaced with a "critical click" feature
+        - Crit Rate represent the chance of performing a crit click per click, and Crit Dmg represents the Dmg increase for a crit click
+    - First upgrade (U101), unlocked from A201, cost 10k, gives 5% Crit Rate and 50% Crit Dmg
+    - 5 Crit Rate upgrades (U102-U106)
+        - Increases the crit rate by 5/5/5/5/10%
+        - Cost 1m/100m/10b/1t/100t
+        - Unlocked from A202 to A206
+    - 5 Crit Dmg upgrades (U111-U115)
+        - Increases the crit dmg by 50/50/50/50/100%
+        - Cost 100k/10m/1b/100b/10t
+        - Unlocked from A202 to A206
+<b>Minor Changes</b>
+- jsons now have an id after them to prevent caching
+- Finished up the "planned tabs" part in w3a.
+</p>
+<h2 class="h2s changelog-fixes block">Fixes</h2>
+<p class="ps block multiline">005 Cross button doesn't go away when there is no notifs
+006 Farm upgrade cost ten times less than what it's supposed to
+007 Fat convertor achi 5 (A480) doesn't show properly because it contains a "&lt;".</p>
+
+<br>
+<br>
+    <h1 class="block">Alpha 1.0.0 The Upgrades Update</h1>
+    <p class="block">20/2/2022</p>
+    <p class="ps changelog-quote block multiline">"Or week 3b, 20/2 is within the week"
+"Finally it's a working game, so time for alpha. From now on the changelog will be shown as Additons/Subtractions/Changes/Fixes, as if anyone cares. Also, every version would be saved as a zip, as if anyone will want an older version. Basically wasting my computer space."</p>
+    <h2 class="h2s changelog-additions block">Additions</h2>
+    <p class="ps block multiline"><b>Notifications</b>   
+- Added a notif section at the bottom, showing a notif when unlocking an achi and when saving the game. The 3 most recent achi notifs will be shown, others will be hidden as "+x more notifs". Notifs can be cleared.
+<b>Achievements</b>
+- Added 12 new achievements (2 KG 5 Money 5 Level) to make it more consistent. KG, KGPS, Level, and Money now all have 25 achis each.
+- Added the achi A000, unlocked immediately when starting the game
+- There are now a total of 202 working achis in the game.
+<b>Upgrades</b>
+- Introduced upgrades to the game, so now you can actually play for a while. That's why it's alpha now
+- Because some achis doesn't unlock upgrades, some unlock 2, and some upgrades aren't going to be unlocked from achis, upgrades ID are independent from achi ids.
+    - Added "unlock1" and "unlock2" to the Achi list indicating the ID of the upgrade unlocked from the achi
+    - Upgrade list is also 2000 items, although there are much less ups and achis currently
+- Currently there are 92 upgrades:
+    - 26 x KGPS% "fat blob" upgrades (U000-U025)
+        - Each upgrades increases the total KGPS multi by a percentage, stacked additively.
+        - Unlocked from KG achi A000-A025
+        - First upgrade cost $100, suceeding upgrade cost x12 more. Final upgrade cost around 95.4 Octillion.
+    - 25 x MPC% "finger" upgrades (U051-U075)
+        - Each upgrades increases the total MPC multi by a percentage, stacked additively.
+        - Unlocked from Money achi A151-175.
+        - First upgrade cost $1200, suceeding upgrade cost x12 more. Final upgrade cost around 95.4 Octillion.
+    - 5 x Manuel Click upgrades (U101-105)
+        - Each upgrade gives a 10% chance to register 2 clicks in one click, stacked additively.
+        - Unlocked from Manuel Click achi A201-A205.
+        - First upgrade cost $10000, suceeding upgrade cost x10 more. Final upgrade cost 100 Million.
+    - 36 x Food upgrades (U151-U154,U176-U179,U201-U204,U226-U229,U251-U254,U276-U279,U301-U304,U326-U329,U351-U354)
+        - Each food have 3 upgrades that doubles KGPS and 1 upgrade that reduces cost by 20%, both stacked multiplicatively.
+        - The first 3 food achis unlock 3 KGPS upgrades, and the third one also unlocks the cost upgrade
+        - The KGPS upgrade cost x10/x100/x1000 of the base price of the food, and the cost upgrade cost x500.
+        - As always, portal is a special case. The first 2 portal KGPS upgrade triples KGPS, and cost x20/x200.
+        - Most of the KGPS upgrades are copied from SC3
+- None of the upgrades have an icon yet.</p>
+<p class="ps changelog-quote block multiline">"Being stupid x 1 : You finished writing the code and decided to start testing. But nothing worked at all. Nothing showed up. After repetitive testing, you realized that after writing the function, you didn't include it in the init code."
+"Being stupid x 2: It showed up, but why does it still not work? After some checking, you then realized that you didn't capitilize some vars properly"
+"Being stupid x 3: Why doesn't the upgrades hide when locked? After some checking, you realized that you somehow messed up the placement of the display:none, instead of hiding the div you hid the img"
+"Being stupid x 4: Why does it still show an error message? After more checking, you realized that you typed display instead of style.display"
+"Being stupid x n: Why does it still not work properly? After even more checking, you realized that the 'Unlock' in the excel is capitalized and so is the json, but you didn't capitalize in the code"
+"And more..."
+</p>
+    <h2 class="h2s changelog-changes block">Changes</h2>
+    <p class="ps block multiline"><b>Display</b>
+- To fit for other resolutions and to fix bug 002 and 003, displays are now in position:absolute and is no longer at a fixed size
+    - Displays now stretches to the bottom of the screen no matter the resolution or zoom
+    - Displays won't go off screen now
+    - The top display now stretches all the way to the right, and the width of the content will stretch too.</p>
+<p class="ps changelog-quote block">"POV: You asked a stupid question on Stack Overflow again"</p>
+<p class="ps block multiline"><b>Achievements</b>
+- Increased the achievement list from 1000 to 2000 items
+    - Including the evolution shop and ascension shop items, food item achis will span from A251-A950. So more space is needed for other achis
+    - Reserved A951-A1000 for total items/updrages bought, and 1976-1999 for meta achievements (achis about achis)
+    - The ID of misc achis now starts at A1901 instead of A901
+- Achievements now shows in notifs in the bottom of the screen instead of the (temporary) windows alert</p>
+<b>Minor Changes</b>
+- Shopitem label does not have a definite height now, so there can be long upgrade names just like in SC3
+    <h2 class="h2s changelog-fixes block">Fixes</h2>
+    <p class="ps block multiline">- 002 Other tabs are not hidden when loading the game
+- 003 The game is slightly larger than the screen resoultion
+- 004 When in lower resolutions, you're unable to scroll to the bottom of the tab, some food are off screen
+    </p>
+    <br>
+    <br>
+
+    <h1 class="block">Week 3a (5a)</h1>
+    <p class="ps changelog-quote block">"POV: You have time to develop this game when there is school, but when there isn't, you spend the whole day sleeping and playin genshin"</p>
+    <p class="block">31/1/2022, 14/2/2022 - 16/2/2022</p>
+    <h2 class="h2s changelog-others block">Progress</h2>
+    <p class="ps block multiline">- Used a string instead of a 1000 element char array to save upgrades and achis, and instead of saving in localstorage as 2000 separate elememts like "a1:0 a2:1 a3:0.... u999:2" it is simply saved as 2 long strings like "Achievements:"01000....001" Upgrades:"100000...012". Cause it is stupid af to save 2000 seperate variables.
+    - Reseted the localStorage to get rid of those 2000 items, so other stuff that are originally in the localstorage, such as google_experiemental_mod, are deleted as well
+- The game will now only be saveable and will only tick when logged in.
+- Added some console logs for debug
+    - There will be a message in the console every tick, update, save, and load when debug is set to true
+    - Also shows the time in ms taken for each tick and update, and the time between ticks. Currently at around 4-8ms and sometimes peak at 20ms, so there's probably not much problem with updating everything everytime.. yet
+- Added 189 (functional) achievements in the game
+    - Instead of hardcoding every single upgrade/achi in like SC3 (And end up with thousands of lines leading to my quit), I converted the excel storing achi info into a json, and have it read from the file
+        - Included jquery.js just to read json, first external js in the game!
+    - So now, all I have to do is to fill in the excel with the names, desc, type, number of items required, and the achi would work without writing any extra code</p>
+    <p class="ps changelog-quote block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Gotta say, this is the best and most efficient thing I've made so far"
+    "But it took so long for me learn how to properly read a json file" (Asking stupid questions on Stack Overflow)
+    "But hey now I can add as many achis as I want... as long as I can think of the name and quote... 189 is my limit"
+    "Paimon is out of brain juice!"</p>
+    <p class="ps block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Currently there will be a windows alert everytime you get an achi, but that's just a temporary thing, would add modals later
+    - Achievements:
+        - 23 x KG Achievements (001-023), First achi at 450KG, second at 1000KG, succeeding achi x10 the previous one, final one is currently at 1 septillion
+        - 25 x KGPS Achievements (051-075), First achi at 1KGPS, succeeding achi x10 the previous one, final one is currently at 1 septillion
+        - 20 x Level Achievements (101-120), First achi at Level 3, succeeding achi +2 the previous one, final one is currently at Level 41
+        - 20 x Money Achievements (151-170), First achi at $100, succeeding achi x10 the previous one, final one is currently at 1 sextillion</p>
+    <p class="ps changelog-quote block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Hey why isn't it 1 septillion this time?"</p>
+    <p class="ps block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 5 x Click achievements (201-205), Manually click 100/250/500/1000/2000 times
+        - 96 x Food Achievements (251-260,276-285,301-310,326-335,351-360,376-385,401-410,426-441,476-485), 10 achi per food, First at 1, second at 7 or depending on context, then 25/50/100/150/200/250/300/350
+            - Portal have 6 extra achi at 75/125/175/225/275/325, because waifus good</p>
+    <p class="ps changelog-quote block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"For portals I will never run out of achi naming ideas"</p>
+    <p class="ps block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Haven't worked on the icons yet. Currently only 85 achis have icons (from w2a)
+- There are now 11 tabs in the game. Only the basic shop tab and achi tab is functional rn.</p>
+    <h2 class="h2s changelog-others block">Planned Tabs</h2>
+    <p class="ps block">- Basic shop: The original shop containing the current 9 food</p>
+    <table>
+        <tbody>
+            <tr>
+                <td><p>Fishball</p></td>
+                <td><p>Burger</p></td>
+                <td><p>Restaurant</p></td>
+                <td><p>Factory</p></td>
+                <td><p>Farm</p></td>
+                <td><p>Castle</p></td>
+                <td><p>Asteroid</p></td>
+                <td><p>Portal</p></td>
+                <td><p>Fat Convertor</p></td>
+            </tr>
+            <tr>
+                <td><img class="img32px" src="../assets/images/icons-food/fishball.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/burger.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/restaurant.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/factory.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/farm.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/castle.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/asteroid.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/portal.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/fatconvertor.png"></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="ps block">- Evolution Shop: A second food shop unlocked after completing certain mission sets. Includes a higher tier version of the Basic Shop food</p>
+    <table>
+        <tbody>
+            <tr>
+                <td><p>Fishblock</p></td>
+                <td><p>Bururururger</p></td>
+                <td><p>Hotel</p></td>
+                <td><p>Creative Barrel</p></td>
+                <td><p>Mob Farm</p></td>
+                <td><p>Walled City</p></td>
+                <td><p>Solar System</p></td>
+                <td><p>Wormhole</p></td>
+                <td><p>Quantum Convertor</p></td>
+            </tr>
+            <tr>
+                <td><img class="img32px" src="../assets/images/icons-food/fishblock.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/bururururger.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/hotel.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/creativebarrel.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/mobfarm.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/walledcity.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/solarsystem.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/wormhole.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/quantumconvertor.png"></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="ps block">- Ascension shop: A third food shop unlocked after completing certain mission sets. Includes an even higher tier version of the Basic Shop food</p>
+    <table>
+        <tbody>
+            <tr>
+                <td><p>Heavenly Fishball</p></td>
+                <td><p>Sky Burger</p></td>
+                <td><p>Restaurant Chamber</p></td>
+                <td><p>Command Block</p></td>
+                <td><p>Superflat Field</p></td>
+                <td><p>Celestia</p></td>
+                <td><p>Galaxy</p></td>
+                <td><p>Abyss Portal</p></td>
+                <td><p>Convertor Convertor</p></td>
+            </tr>
+            <tr>
+                <td><img class="img32px" src="../assets/images/icons-food/heavenlyfishball.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/skyburger.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/restaurantchamber.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/commandblock.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/superflatfield.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/celestia.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/galaxy.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/abyssportal.png"></td>
+                <td><img class="img32px" src="../assets/images/icons-food/convertorconvertor.png"></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="ps block multiline">- Isekai Portal: A gacha system that uses Catalyst or an item equivalent to genshin fates (Golden fishballs or fat blobs maybe?) to wish for different equipment that boosts different aspects of the game (For example, the head equipment Catears boosts Portal KGPS by +50%, and the hand equipment Drills increases Mining drops by +75%). Unlocks after buying a portal.
+- Mining: Mine for different raw ores and materials for Alchemy and Research. It will be a 20x20 grid, you get one mining point every 5 achievements, and you can choose to mine in one direction by using one point. Differenct pickaxe tiers gives a different range of blocks you can mine.
+- Exploring: Explore for different raw materials and resources for Alchemy and Research. There will be a loot table like dh games.
+- Alchemy: Craft raw ore and materials into useful items that boost different aspects of the game. Some equipments will be craftable.
+- Research: Uses different resources obtained from Mining, Exploring, and Alchemy for research, which boosts different aspects of the game. There will be 4 inter-foodtype researches (for example, the "Cheesy" research boosts burger and castle KGPS like cookie clicker synergies.)
+- Missions: Mission sets similar to the genshin adventurer book. Completing mission sets unlock stuff such as higher tier shops. For example, a mission set could be
+Get 150 KGPS from fishballs (0/150.0)
+Obtain 25 restaurants (0/25)
+Buy one portal (0/1)
+Unlock 50 achievements (0/50)
+Mine 15 items (0/15)
+Wish 50 times (0/50)
+Craft 15 items (0/15)
+- Achievements: Some achievements boosts corresponding parts of the game, for example "Click 500 times" achievement can boost MPCperKG by 10%. Achievements also gives catalysts and mining points.</p>
+    <br>
+    <br>
+
+    <h1 class="block">Week 2b</h1>
+    <p class="block">27/1/2022 - 30/1/2022</p>
+    <p class="ps block">- Week great waifu</p>
+    <p class="ps changelog-quote block multiline">"Note that 'great waifu' is one tier lower than 'best waifu'. Best waifus include Asuna, Sinon, Asuka, Rei, Keqing, Ganyu, and Zero Two only."
+"Give. me. my. Ganyu. I need primogems"
+"Actually, nevermind, I can't aim properly, probably gonna save for ayaka"
+"And these gray quotes are completely unrelated to the game. Unless I add waifus?"
+"Snorlax-chan uwu"
+"Actually I'll have a gacha feature in the game later, to roll for stuff like catears which boosts portal KGPS"
+"Why are there so many useless gray quotes of me talking to myself, which no one will ever read?"</p>
+    <h2 class="h2s changelog-others block">Progress</h2>
+    <p class="ps block multiline">- Made the main (aka login) menu
+     - Used a marquee as a background, looping this long 700x12000 banner</p>
+    <img src="../assets/images/main/marquee-scroll-background.png" width="1500px">
+    <p class="ps changelog-quote block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Used many of the assets I drew in the fast few days, but the thing is, when I enlarge those pixel art, anti-aliasing made it so blurry, even if I am enlarging by an integral factor"
+     "Also, the marquee cannot immediately start from the beginning after it scrolled to the end, leaving an empty space in between... And I have to add a background behind the background to make it less awkward. So now I have 3 layers of background including the original dh background"</p>
+    <p class="ps block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Finally drew the 2 remaining food assets I missed in SC3, just to include them in the banner</p>
+    <p class="ps block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Implemented save&load with local storage, you can choose to load save or start a new save in the main menu. Currently the menu buttons are empty but functional, haven't design them yet</p>
+    <p class="ps changelog-quote block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Localstorage is a completely new thing in SC, spent a bunch of time coding the saving and loading part, but again, it's just one sentence in the changelog"</p>
+    <p class="ps block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Apparently, localstorage can only save strings, so I cannot directly save classes and have to save them one var by one var, and number variables have to be converted back. Those arrays are also separately stored. Probably done this very inefficiently.</p>
+    <p class="ps changelog-quote block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"You could have just stored the achi and upgrade arrays in one string instead of 1000 separate ones! 2k localstorages, what the hell!"</p>
+    <p class="ps block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Currently the only way to save is through console or by clicking s, probably gonna add autosave later. Preferably, it should save every update(), to prevent cheating
+         - Currently the game still ticks in the main menu before loading or starting a new save, and you can save in that case as well, which will cover the original save with a new one. Gonna deal with that later.</p>
+    <p class="ps block">- Finally added the main shop food</p>
+    <p class="ps changelog-quote block">"Isn't that the entire point of this game? Why is that added after 10 days of development?"</p>
+    <p class="ps block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Moved some styles to classes, added a border rounded corners, and remade the percentage bar to match with the xp bar. Also added some quotes to the description. Other stuff are just copied from SC3
+         - And I added a border to the .ps class to make those food descriptions less compact. This affected the changelog as well, the garbage written here is more sparcely placed, but it is still garbage no one will read.
+     - And they actually work. In other words, the game now works.
+     - However, there is a very big issue with the balancing of the game which existed since SC1. As the food increases the KG every second and not the currency like other games, which then the KG the money output per click, the money you can get per second increases when idle without buying more food. In most idle games, you progress by using the currency to increase the currency per second, however in this game, running it already increase the currency per click. So basically, you can just buy some food and then come back after a while, then click, and you will gain so much money you can immediately buy much hier tier stuff, then you wait again. I might have to make it so that the KGPS slowly decreases when not buying food, similar to antimatter dimensions.</p>
+     <p class="ps changelog-quote block">"Ugh, a long paragraph of shit no one will ever read" - literally describing the changelog</p>
+     <p class="ps block">- All updates (KG/KGPS/MPC updates and calculations, food count/cost/KGPS updates and calculations, percentage and xp bar updates etc) are generalized into one function, and is called every tick and every change. Optimization and performance is not my job, and there (probably) isn't any problems</p>
+    <p class="ps changelog-quote block multiline">"However, there seems to be some issue when loading this changelog as it gets longer... expecially when i included images here. Currently at 421ms max, how high can it go?"
+"I guess, preloading images next?" - Me asking myself, while not knowing how preloading works</p>
+    <br>
+    <br>
+
+    <h1 class="block">Week 2a</h1>
+    <p class="block">24/1/2022 - 27/1/2022</p>
+    <p class="ps block">- Separated this week into 2, cause a lot have been done in a week</p>
+    <p class="ps changelog-quote block">"And most importantly, there will be week 2b, and 2b is a great waifu"</p>
+    <h2 class="h2s changelog-others block">Progress</h2>
+    <p class="ps block multiline">- Mainly focused on drawing pixel art (achievement icons). Made an achievement list in excel to keep track of achievement IDs. Currently using 001-050 for KG achis, 051-100 for KGPS achis, 101-150 for level achis, 151-200 for coin achis, 201-? for click achis, 901-999 for special achis</p>
+    <p class="ps changelog-quote block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Do you call that 'Mainly focused on'? You literally did nothing else!"
+     "The thing is, even if i think of hundreds of achievements now and plug them all in an excel, and draw hundreds of achievement icons, it will probably be months later before they are actually implemented in game"</p>
+    <p class="ps block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Assets +92
+     - Icons Completed: </p>
+    
+    <p class="ps block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 20 x KG achievements (001-020); First achi at 450KG (Standard snorlax weight), second at 1000KG, after that succeeding achi x10 the previous one.</p>
+    <img class="img50px" src="../assets/images/icons-achievements/A001.png"><img class="img50px" src="../assets/images/icons-achievements/A002.png"><img class="img50px" src="../assets/images/icons-achievements/A003.png"><img class="img50px" src="../assets/images/icons-achievements/A004.png"><img class="img50px" src="../assets/images/icons-achievements/A005.png"><img class="img50px" src="../assets/images/icons-achievements/A006.png"><img class="img50px" src="../assets/images/icons-achievements/A007.png"><img class="img50px" src="../assets/images/icons-achievements/A008.png"><img class="img50px" src="../assets/images/icons-achievements/A009.png"><img class="img50px" src="../assets/images/icons-achievements/A010.png"><img class="img50px" src="../assets/images/icons-achievements/A011.png"><img class="img50px" src="../assets/images/icons-achievements/A012.png"><img class="img50px" src="../assets/images/icons-achievements/A013.png"><img class="img50px" src="../assets/images/icons-achievements/A014.png"><img class="img50px" src="../assets/images/icons-achievements/A015.png"><img class="img50px" src="../assets/images/icons-achievements/A016.png"><img class="img50px" src="../assets/images/icons-achievements/A017.png"><img class="img50px" src="../assets/images/icons-achievements/A018.png"><img class="img50px" src="../assets/images/icons-achievements/A019.png"><img class="img50px" src="../assets/images/icons-achievements/A020.png">
+    <p class="ps changelog-quote block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Snorlax went from getting fatter to drowl more, then straight up spit lava, ending up electrified"
+     "Also, gradient effect go brrrr"</p>
+    <p class="ps block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 20 x KGPS achievements (051-070); First achi at 1KGPS, after that succeeding achi x10 the previous one.</p>
+    <img class="img50px" src="../assets/images/icons-achievements/A051.png"><img class="img50px" src="../assets/images/icons-achievements/A052.png"><img class="img50px" src="../assets/images/icons-achievements/A053.png"><img class="img50px" src="../assets/images/icons-achievements/A054.png"><img class="img50px" src="../assets/images/icons-achievements/A055.png"><img class="img50px" src="../assets/images/icons-achievements/A056.png"><img class="img50px" src="../assets/images/icons-achievements/A057.png"><img class="img50px" src="../assets/images/icons-achievements/A058.png"><img class="img50px" src="../assets/images/icons-achievements/A059.png"><img class="img50px" src="../assets/images/icons-achievements/A060.png"><img class="img50px" src="../assets/images/icons-achievements/A061.png"><img class="img50px" src="../assets/images/icons-achievements/A062.png"><img class="img50px" src="../assets/images/icons-achievements/A063.png"><img class="img50px" src="../assets/images/icons-achievements/A064.png"><img class="img50px" src="../assets/images/icons-achievements/A065.png"><img class="img50px" src="../assets/images/icons-achievements/A066.png"><img class="img50px" src="../assets/images/icons-achievements/A067.png"><img class="img50px" src="../assets/images/icons-achievements/A068.png"><img class="img50px" src="../assets/images/icons-achievements/A069.png"><img class="img50px" src="../assets/images/icons-achievements/A070.png">
+    <p class="ps changelog-quote block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"What is this? A spinning... thing? And turn into... Quarks in a subatomic particle?"
+     "Also, glitches and hue effect go brrr"</p>
+    <p class="ps block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 20 x Level achievements (101-120); First achi at lv 3,  after that succeeding achi +2 the previous one.</p>
+    <img class="img50px" src="../assets/images/icons-achievements/A101.png"><img class="img50px" src="../assets/images/icons-achievements/A102.png"><img class="img50px" src="../assets/images/icons-achievements/A103.png"><img class="img50px" src="../assets/images/icons-achievements/A104.png"><img class="img50px" src="../assets/images/icons-achievements/A105.png"><img class="img50px" src="../assets/images/icons-achievements/A106.png"><img class="img50px" src="../assets/images/icons-achievements/A107.png"><img class="img50px" src="../assets/images/icons-achievements/A108.png"><img class="img50px" src="../assets/images/icons-achievements/A109.png"><img class="img50px" src="../assets/images/icons-achievements/A110.png"><img class="img50px" src="../assets/images/icons-achievements/A111.png"><img class="img50px" src="../assets/images/icons-achievements/A112.png"><img class="img50px" src="../assets/images/icons-achievements/A113.png"><img class="img50px" src="../assets/images/icons-achievements/A114.png"><img class="img50px" src="../assets/images/icons-achievements/A115.png"><img class="img50px" src="../assets/images/icons-achievements/A116.png"><img class="img50px" src="../assets/images/icons-achievements/A117.png"><img class="img50px" src="../assets/images/icons-achievements/A118.png"><img class="img50px" src="../assets/images/icons-achievements/A119.png"><img class="img50px" src="../assets/images/icons-achievements/A120.png">
+    <p class="ps changelog-quote block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"This went from a regular Snorlax level icon to some weird electrical XP particle"
+     "Also, soft brushes go brrrr"</p>
+    <p class="ps block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 20 x Coin achievements (151-170); First achi at $100, after that succeeding achi x10 the previous one.</p>
+    <img class="img50px" src="../assets/images/icons-achievements/A151.png"><img class="img50px" src="../assets/images/icons-achievements/A152.png"><img class="img50px" src="../assets/images/icons-achievements/A153.png"><img class="img50px" src="../assets/images/icons-achievements/A154.png"><img class="img50px" src="../assets/images/icons-achievements/A155.png"><img class="img50px" src="../assets/images/icons-achievements/A156.png"><img class="img50px" src="../assets/images/icons-achievements/A157.png"><img class="img50px" src="../assets/images/icons-achievements/A158.png"><img class="img50px" src="../assets/images/icons-achievements/A159.png"><img class="img50px" src="../assets/images/icons-achievements/A160.png"><img class="img50px" src="../assets/images/icons-achievements/A161.png"><img class="img50px" src="../assets/images/icons-achievements/A162.png"><img class="img50px" src="../assets/images/icons-achievements/A163.png"><img class="img50px" src="../assets/images/icons-achievements/A164.png"><img class="img50px" src="../assets/images/icons-achievements/A165.png"><img class="img50px" src="../assets/images/icons-achievements/A166.png"><img class="img50px" src="../assets/images/icons-achievements/A167.png"><img class="img50px" src="../assets/images/icons-achievements/A168.png"><img class="img50px" src="../assets/images/icons-achievements/A169.png"><img class="img50px" src="../assets/images/icons-achievements/A170.png">
+    <p class="ps changelog-quote block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"This is... outrageous (is that the word? I such at engrish). It f**king went from regular coins to some shining icon, then to a protostar and a galaxy, then a cluster, then a constellation! How does then final 10 icons relate to coins?"
+     "Also, more soft brushes go brrrr. You dont really call them pixel art when you use the brush tool, just a very small image"</p>
+    <p class="ps block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 5 x Click achievements (201-205); Manually click 100/250/500/1000/2000 times, more achi for autoclick x times (211-) and reach x autoclick/s(226-) later</p>
+    <img class="img50px" src="../assets/images/icons-achievements/A201.png"><img class="img50px" src="../assets/images/icons-achievements/A202.png"><img class="img50px" src="../assets/images/icons-achievements/A203.png"><img class="img50px" src="../assets/images/icons-achievements/A204.png"><img class="img50px" src="../assets/images/icons-achievements/A205.png">
+    <p class="ps changelog-quote block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"I guess... this is normal? just a cursor breaking and a snorlax changing hue"
+     "Also, (nothing) go brrrr"</p>
+    <p class="ps block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 7 x Others achievements (901-907); "Scroll to the end of the changelog", "Save 1/50/250 times", "Click help", "Click help inside help", "Click this achi slot".</p>
+    <img class="img50px" src="../assets/images/icons-achievements/A1901.png"><img class="img50px" src="../assets/images/icons-achievements/A1902.png"><img class="img50px" src="../assets/images/icons-achievements/A1903.png"><img class="img50px" src="../assets/images/icons-achievements/A1904.png"><img class="img50px" src="../assets/images/icons-achievements/A1905.png"><img class="img50px" src="../assets/images/icons-achievements/A1906.png"><img class="img50px" src="../assets/images/icons-achievements/A1907.png">
+    <p class="ps changelog-quote block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a bunch of random icons"</p>
+    <p class="ps changelog-quote block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"And yes, still haven't worked on the missing assets from SC3"</p>
+    <p class="ps block multiline">- Didn't touch the main.html at all, so now I got 110 assets but only the top and side display
+     - Although I didn't code anything, I realized that transitions exist when searching about tooltips, gonna add transitions later. css doesn't suck that much</p>
+     <p class="ps changelog-quote">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Anti-aliasing sucks, css doesn't" - Me after drawing 93 pixel art with pixlr (Tried other websites to draw pixel art, turns out that pixlr is still the most useful one. I just switch to those platforms when enlarging or reducing pixel arts cause they don't have anti-aliasing, otherwise pixlr is better)</p>
+    <br>
+    <br>
+
+
+    <h1 class="block">Week 1</h1>
+    <p class="block">17/1/2022 - 23/1/2022</p>
+    <h2 class="h2s changelog-others block">Something no one will read</h2>
+    <p class="ps changelog-quote block">"Something I myself also doesn't want to read"</p>
+    <p class="ps block multiline">- Completely abandoned Snorlax Clicker 3 (which i haven't touched for a few months) and decided to start the 4th version of Snorlax Clicker, because of how messy the code is. With a random name I came up with after playing the Avaritia mod
+     - Instead of using a billion variables and separate functions for each food, I realized that classes exist
+     - And instead of stuffing all the html and js in one file (and tell others that i coded a few k lines of code), I realized out that separate .js, .css, and .html files exist
+     - And instead of a bunch of styles in the html code, I realized that you can have multiple css classes
+     - And instead of reseting every time you reload, I realized out that local save exist. Saving and loading is probably the main thing I'll work on
+     - And instead of a bunch of divs in a bunch of divs containing more divs, I realized that tables exist
+     - (Hopefully) Better UI, and a logo & menu screen to make it look more like a game
+        - Apparently, making stuff less bold and words less compact & smaller seems to make the game look much better. Top bars also significantly smaller.
+        - Rounded corners go brrr
+     - Why the hell is Portal 40 times more efficient than Asteroid? Purely for the 177013?
+     - Decided to include an XP feature, so the top bar have more stuff and is less useless. XP probably would be gained through achievements instead of the SC2 way which give XP every upgrade.
+     - Also a "catalyst" as a second currency to fill up more slots in the top bar.</p>
+    <p class="ps changelog-quote block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"So the reason to randomly add 2 new features is purely to fill up the top bar?" - Me to myself, cause no one plays this game</p>
+    <p class="ps block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Time to actually draw the 50 missing assets in SC3, i guess</p>
+    <p class="ps changelog-quote block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"F**k anti-alising I just want to draw pixel art!" - Me, an idiot who uses pixlr to draw pixel art</p>
+    <p class="ps changelog-quote block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Also, why is the 'mirror' feature in pixlr not symmetrical?" - Me, an idiot who still uses pixlr to draw pixel art</p>
+    <h2 class="h2s changelog-others block">Progress</h2>
+    <p class="ps block multiline">- <s>Wasted</s> Spent a bunch of time in the changelog. Wrote a lot of useless stuff here (and a bunch of changelog related css), when the main.html only have a top bar.
+- Mainly focused on js functions and classes & css, <s>aka no useful content</s> to make future coding clearer and easier.
+<p class="ps changelog-quote block multiline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Literally 80% of the time doing this... but placed in one line in changelog"
+     "this. this. this. this. this."</p>
+<p class="ps block multiline">- Assets +4: XP, Catalyst, Logout Icon, Game Icon. Still haven't worked on any missing assets from SC3.
+     - Game logo:</p>
+<img src="../assets/images/main/logo.png" style="width:400px">
+<p class="ps changelog-quote block">"For some reason I made this icon 4k... so now I mush set a width for the icon, otherwise the letter "A" eats up the entire 1920x1080 screen"</p>
+<p class="ps block multiline">- Currently added the topmost bar, top bar, and snorlax display. Copied from SC3 and rewrote most of the code.
+     - Differences compared to SC3
+         - Topmost bar thinner and words less bold. The timer and player count now aligned to the right. Added a logout button and icon (best pixel art i've drawn so far?)
+         - Also included a real time "last saved" in the topmost bar, this and the timer is the only thing that currently works.
+         - Top bar have a circular corner, much thinner, and added a second currency catalyst and a new XP feature. Currently using level^2 x 100 as the formula for the main XP. (Made an XP class, so more types of XP later?)
+         - Probably gonna add a tier system to fill in the empty space next to the level, and you have to complete tasks similar to the Genshin Adventure Book to advance in tiers
+         - Snorlax display doesn't have any visible changes (Actually, there is a 3px difference), only moved styles from html to .css
+         - Completely rewrote the num to word function, now it's fixed at 3 d.p. when there is a suffix, and 1 d.p. when there isn't, and 1 sig. fig when smaller than 1.
+         - Also an option for integral varibales to not show the d.p. Another option to show words "Nonillion" "Quattordecillion" instead of suffixes "No" "QaD". Currently up to 1 trigintillion.
+    </p>
+</body>
+</html>

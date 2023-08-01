@@ -1,0 +1,221 @@
+.header{
+    width: 100%;
+    height: 35px;
+    background-color: rgba(12, 12, 24, 0.3);
+}
+.maindisplay{
+    position: absolute;
+    top:120px; bottom:0px; left:0px; right:0px;
+    display: inline-block;
+    border: 2px solid #404040;
+}
+.topdisplay{
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    height:100px;
+    top:0px; left:0px; right:0px;
+    background-color: rgb(26,26,26,0.7);
+    border: 2px solid #404040;
+    border-radius: 10px;
+}
+.topdisplayinner{
+    display:flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin-top:3px;
+}
+.topitemdisplay{
+    height: 40px;
+    border: 1px solid #404040;
+    margin-right: 10px;
+    margin-left:10px;
+    display: inline-flex;
+    text-align: left;
+    border-radius: 5px;
+    flex-grow:1;
+}
+.xpdisplay{
+    height: 6px;
+    width: 100px;
+    background-color: rgb(0, 60, 100);
+    margin: none;
+    display: block;
+    border-radius: 3px;
+}
+.xpdisplayinner{
+    height: 6px;
+    width: 0px;
+    background-color: rgb(0, 150, 250);
+    margin: none;
+    border: none;
+    border-radius: 3px;
+    transition: width 1s;
+}
+.percentagedisplay{
+    height: 6px;
+    width: 300px;
+    background-color: rgb(0, 60, 36);
+    margin: none;
+    display: block;
+    border-radius: 3px;
+}
+.percentagedisplayinner{
+    height: 6px;
+    width: 0px;
+    background-color: rgb(0, 150, 96);
+    margin: none;
+    border: none;
+    border-radius: 3px;
+    transition: width 1s;
+}
+.leftdisplay{
+    width: 250px;
+    position: absolute;
+    top:0px; bottom:0px; left:0px;
+    display: inline-block;
+    border: 2px solid #404040;
+    vertical-align: top;
+}
+.rightdisplay{
+    position: absolute;
+    top:0px; bottom:0px; left:250px; right:0px;
+    display: inline-block;
+    vertical-align: top;
+}
+.tab{
+    width: 900px;
+    position: absolute;
+    top:100px; bottom:0px; left:0px; right:0px;
+    display: block;
+    border: 2px solid #404040;
+    overflow: scroll;
+}
+.navigatetab{
+    height: 100px;
+    width: 60px;
+    display: inline-block;
+    border: 2px solid #505050;
+    border-radius:10px;
+    vertical-align: top;
+    background-color:rgba(0,0,0,0.2)
+}
+.navigatetab:hover, .logindiv:hover{
+    background-color:rgba(0,0,0,0.5)
+}
+.navigatetab:hover:active, .logindiv:active{
+    animation-name: tinyboing;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+}
+.navigateimage{
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    display: block;
+}
+.navigatelabel{
+    width: 50px;
+    text-align: center;
+}
+.statsdisplay{
+    width: 240px;
+    height: 120px;
+    background-color: rgba(12, 12, 12, 0.3);
+}
+.statsdisplayinner{
+    width: 240px;
+    height: 30px;
+    text-align: center;
+    margin: 3px;
+}
+.bodydisplay{
+    position: absolute;
+    top:40px; bottom:0px; left:0px; right:0px;
+}
+.logindiv{
+    position:absolute;
+    left:35%;
+    background-color:rgba(0,0,0,0.2);
+    width: 350px;
+    height: 70px;
+    border: 2px solid grey;
+    border-radius: 20px;
+}
+.shopitemdisplay{
+    width: 875px;
+    height: auto;
+    display: block;
+    border: 2px solid #505050;
+    align-items: center;
+    border-radius:10px;
+}
+#notifsdisplay{
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%)
+}
+.notifs{
+    width:350px;
+    height:auto;
+    background-color: black;
+    border: 2px solid #505050;
+    margin-bottom:5px;
+    position:relative;
+}
+.notifsicon{
+    position:absolute;
+    left:10px;
+    top:50%;
+    transform: translateY(-50%);
+}
+.notifshead{
+    padding-left:70px;
+    padding-top:10px;
+    display: block;
+}
+.notifsname{
+    padding-left:70px;
+    padding-top:2px;
+    display: block;
+}
+.notifsdesc{
+    padding-left:70px;
+    padding-top:2px;
+    padding-bottom:4px;
+    display: block;
+}
+#notifscross{
+    width:15px;
+    height:15px;
+    background-color: #333333;
+    border: 2px solid #808080;
+    position:absolute;
+    right:-10px;
+    top:-10px;
+}
+.missionsdisplay{
+    background:rgba(127,255,255,0.2);
+    border: 2px solid #404040;
+    border-radius:10px;
+    position:absolute;
+    left: 5%;
+    right: 5%;
+    top: 5%;
+    padding:10px;
+}
+.missiondisplay, .rewarddisplay{
+    width:100%;
+    height:60px;
+    position:relative;
+    border-radius:10px;
+    background-color:rgba(255,255,200,0.3);
+    padding:5px;
+    margin-top:5px;
+}
+.rewarddisplay{
+    height:100px;
+    margin-top:20px;
+    display:flex;
+}

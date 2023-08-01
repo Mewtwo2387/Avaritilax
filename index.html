@@ -1,0 +1,610 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title id="title">Avaritilax 4</title>
+    <link rel="icon" href="assets/images/icons-main/level.png">
+    <script src="js/external/jquery.js"></script>
+    <script type="text/javascript" src="js/external/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="js/food.js"></script>
+    <script src="js/vars.js"></script>
+    <script src="js/up.js"></script>
+    <script src="js/achi.js"></script>
+    <script src="js/math.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/save.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/mine.js"></script>
+    <script src="js/mission.js"></script>
+    <link rel="stylesheet" href="css/ani.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/others.css" type="text/css">
+    <link rel="stylesheet" href="css/display.css" type="text/css">
+</head>
+
+<body style="overflow:hidden;">
+    <div class="header">
+        <img class="smalllogo" src="assets/images/main/logo.png">
+        <h2 class="h2header" onclick="openlink('pages/help.html')">Help</h2>
+        <h2 class="h2header" onclick="openlink('pages/changelog.html')">Changelog</h2>
+        <h2 class="h2header" onclick="openlink('pages/css.html')">CSS</h2>
+        
+        <h2 class="h2header right" style="margin-left: 0px; color:#999999; font-weight:bolder;" onclick="logout();">Logout</h2>
+        <img class="img32px right" src="assets/images/icons-main/logout.png" onclick="logout();">
+        <h2 class="h2sheader right" id="header-lastsaved">Last Saved: none</h2>
+        <h2 class="h2header right" id="header-playtime">0d 00:00:00</h2>
+        <h2 class="h2header right" style="font-weight:bolder">At least 1 playing</h2>
+    </div>
+
+    <div class="bodydisplay" id="login">
+        <div style="width:80%;height:700px;background:url('assets/images/main/marquee-background.png');margin-left:10%;position: relative;">
+            <marquee style="position:absolute;width:100%;height:700px;" behavior="scroll" direction="left">
+                <img src="assets/images/main/marquee-scroll-background.png">
+            </marquee>
+            <img style="position:absolute; left:300px;" height="300px" src="assets/images/main/logo.png">
+            <div class="logindiv" id="continue" style="top:500px" onclick="load(false)">
+            </div>
+            <div class="logindiv" id="restart" style="top:600px" onclick="load(true)">
+            </div>
+            <h2 id="loginload" style="display:none"></h2>
+            <p style="position:absolute; bottom:50px;">Version: Alpha 1.1.2</p>
+        </div>
+    </div>
+
+    <div class="bodydisplay" id="game" style="display:none;">
+        <div class="topdisplay">
+            <div class="topdisplayinner">
+                <div class="topitemdisplay">
+                    <img class="img32px40" style="padding-left:10px;" src="assets/images/icons-main/coin.png">
+                    <h1 class="h1stop" style="vertical-align:top;" id="moneylabel">$0</h1>
+                </div>
+                <div class="topitemdisplay">
+                    <img class="img32px40" style="padding-left:10px;" src="assets/images/icons-main/catalyst.png">
+                    <h1 class="h1stop" style="vertical-align:top;" id="catalystlabel">0</h1>
+                </div>
+                <div class="topitemdisplay">
+                    <img class="img32px40" style="padding-left:10px;" src="assets/images/icons-main/goldenfishball.png">
+                    <h1 class="h1stop" style="vertical-align:top;" id="goldenfishballlabel">0</h1>
+                </div>
+                <div class="topitemdisplay">
+                    <img class="img32px40" style="padding-left:10px;" src="assets/images/icons-main/fatblob.png">
+                    <h1 class="h1stop" style="vertical-align:top;" id="fatbloblabel">0</h1>
+                </div>
+            </div>
+            <div class="topdisplayinner">
+                <button id="mainlevellabel" class="levelbutton">1</button>
+                <div style="display:inline-block;">
+                    <div id="mainxpdisplay" class="xpdisplay">
+                        <div id="mainxpdisplayinner" class="xpdisplayinner"></div>
+                    </div>
+                    <p id="mainxplabel" style="color:rgb(0, 150, 250);">0/100</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="maindisplay">
+            <div class="leftdisplay">
+                <div class="statsdisplay">
+                    <div class="statsdisplayinner">
+                        <h1 id="kglabel">100.0</h1>   <h2>KG</h2>
+                    </div>
+                    <br>
+                    <div class="statsdisplayinner">
+                        <h1 id="kgpslabel" class="h1s">0</h1>   <h2 class="h2s">KGPS</h2>
+                    </div>
+                    <div class="statsdisplayinner">
+                        <h1 id="mpclabel" class="h1s">1.0</h1>   <h2 class="h2s">MPC</h2>
+                    </div>
+                </div>
+                <br>
+                <button type="button" id="snorlaxbutton" class="snorlax-button" onclick="snorlaxclick(event);"></button>
+                <br>
+            </div>
+            <div class="rightdisplay">
+                <div class="navigatetab" id="basicshopnavigate" onclick="navigate('basicshop',event);"><img class="navigateimage" src="assets/images/icons-tabs/basicshop.png"><p class="navigatelabel">Basic Shop</p></div>
+                <div class="navigatetab" id="evolutionshopnavigate" onclick="navigate('evolutionshop',event);"><img class="navigateimage" src="assets/images/icons-tabs/evolutionshop.png"><p class="navigatelabel">Evolution Shop</p></div>
+                <div class="navigatetab" id="ascensionshopnavigate" onclick="navigate('ascensionshop',event);"><img class="navigateimage" src="assets/images/icons-tabs/ascensionshop.png"><p class="navigatelabel">Ascension Shop</p></div>
+                <div class="navigatetab" id="upgradesnavigate" onclick="navigate('upgrades',event);"><img class="navigateimage" src="assets/images/icons-tabs/upgrades.png"><p class="navigatelabel">Upgrades</p></div>
+                <div class="navigatetab" id="isekaiportalnavigate" onclick="navigate('isekaiportal',event);"><img class="navigateimage" src="assets/images/icons-tabs/isekaiportal.png"><p class="navigatelabel">Isekai Portal</p></div>
+                <div class="navigatetab" id="miningnavigate" onclick="navigate('mining',event);"><img class="navigateimage" src="assets/images/icons-tabs/mining.png"><p class="navigatelabel">Mining</p></div>
+                <div class="navigatetab" id="exploringnavigate" onclick="navigate('exploring',event);"><img class="navigateimage" src="assets/images/icons-tabs/exploring.png"><p class="navigatelabel">Exploring</p></div>
+                <div class="navigatetab" id="alchemynavigate" onclick="navigate('alchemy',event);"><img class="navigateimage" src="assets/images/icons-tabs/alchemy.png"><p class="navigatelabel">Alchemy</p></div>
+                <div class="navigatetab" id="researchnavigate" onclick="navigate('research',event);"><img class="navigateimage" src="assets/images/icons-tabs/research.png"><p class="navigatelabel">Research</p></div>
+                <div class="navigatetab" id="missionsnavigate" onclick="navigate('missions',event);"><img class="navigateimage" src="assets/images/icons-tabs/missions.png"><p class="navigatelabel">Missions</p></div>
+                <div class="navigatetab" id="achievementsnavigate" onclick="navigate('achievements',event);"><img class="navigateimage" src="assets/images/icons-tabs/achievements.png"><p class="navigatelabel">Achievements</p></div>
+                <div class="navigatetab" id="achievementsnavigate" onclick="navigate('infosettings',event);"><img class="navigateimage" src="assets/images/icons-tabs/infosettings.png"><p class="navigatelabel">Info & Settings</p></div>
+
+                <div class="tab" id="basicshop">
+                    <div id="fishball" class="shopitemdisplay">
+                        <img class="img32px60" src="assets/images/icons-food/fishball.png">
+                        <h1 class="h1s shopitem-label" id="fishballcountdisplay">0</h2>   <h2 class="shopitem-label">Fishballs</h2>
+                        <button type="button" class="shopitem-button" onclick="buyfood(0)">Purchase x 1</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(0,10)">Purchase x 10</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(0,100)">Purchase x 100</button>
+                        <div class="percentagedisplay">
+                            <div id="fishballpercent" class="percentagedisplayinner">
+                                <div id="fishballpercent10" class="percentagedisplayinner">
+                                    <div id="fishballpercent100" class="percentagedisplayinner"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p class="ps">Snorlax's favorite food. Eating too much fishball slowly turned him into a fishball head.</p>
+                        <br>
+                        <p id="fishballdisplay">Cost: KGPS:</p>
+                        <br>
+                        <p id="fishballdisplay2" >Total KGPS:</p>
+                    </div>
+                    <div id="burger" class="shopitemdisplay">
+                        <img class="img32px60" src="assets/images/icons-food/burger.png">
+                        <h1 class="h1s shopitem-label" id="burgercountdisplay">0</h2>   <h2 class="shopitem-label">Burgers</h2>
+                        <button type="button" class="shopitem-button" onclick="buyfood(1)">Purchase x 1</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(1,10)">Purchase x 10</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(1,100)">Purchase x 100</button>
+                        <div class="percentagedisplay">
+                            <div id="burgerpercent" class="percentagedisplayinner">
+                                <div id="burgerpercent10" class="percentagedisplayinner">
+                                    <div id="burgerpercent100" class="percentagedisplayinner"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p class="ps">Burgers are the only type of food that makes Snorlax eat vegetables... by accident</p>
+                        <p class="ps changelog-quote block">"And french fries are the only type of salad Snorlax eat."</p>
+                        <br>
+                        <p id="burgerdisplay">Cost: KGPS:</p>
+                        <br>
+                        <p id="burgerdisplay2" >Total KGPS:</p>
+                    </div>
+                    <div id="restaurant" class="shopitemdisplay">
+                        <img class="img32px60" src="assets/images/icons-food/restaurant.png">
+                        <h1 class="h1s shopitem-label" id="restaurantcountdisplay">0</h2>   <h2 class="shopitem-label">Restaurants</h2>
+                        <button type="button" class="shopitem-button" onclick="buyfood(2)">Purchase x 1</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(2,10)">Purchase x 10</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(2,100)">Purchase x 100</button>
+                        <div class="percentagedisplay">
+                            <div id="restaurantpercent" class="percentagedisplayinner">
+                                <div id="restaurantpercent10" class="percentagedisplayinner">
+                                    <div id="restaurantpercent100" class="percentagedisplayinner"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p class="ps">An edible building. Why waste time to eat it's content when you can eat it as a whole?</p>
+                        <br>
+                        <p id="restaurantdisplay">Cost: KGPS:</p>
+                        <br>
+                        <p id="restaurantdisplay2" >Total KGPS:</p>
+                    </div>
+                    <div id="factory" class="shopitemdisplay">
+                        <img class="img32px60" src="assets/images/icons-food/factory.png">
+                        <h1 class="h1s shopitem-label" id="factorycountdisplay">0</h2>   <h2 class="shopitem-label">Factories</h2>
+                        <button type="button" class="shopitem-button" onclick="buyfood(3)">Purchase x 1</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(3,10)">Purchase x 10</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(3,100)">Purchase x 100</button>
+                        <div class="percentagedisplay">
+                            <div id="factorypercent" class="percentagedisplayinner">
+                                <div id="factorypercent10" class="percentagedisplayinner">
+                                    <div id="factorypercent100" class="percentagedisplayinner"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p class="ps">Restaurants aren't an option anymore when you can go straight to the source of the food and eat them all</p>
+                        <br>
+                        <p id="factorydisplay">Cost: KGPS:</p>
+                        <br>
+                        <p id="factorydisplay2" >Total KGPS:</p>
+                    </div>
+                    <div id="farm" class="shopitemdisplay">
+                        <img class="img32px60" src="assets/images/icons-food/farm.png">
+                        <h1 class="h1s shopitem-label" id="farmcountdisplay">0</h2>   <h2 class="shopitem-label">Farms</h2>
+                        <button type="button" class="shopitem-button" onclick="buyfood(4)">Purchase x 1</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(4,10)">Purchase x 10</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(4,100)">Purchase x 100</button>
+                        <div class="percentagedisplay">
+                            <div id="farmpercent" class="percentagedisplayinner">
+                                <div id="farmpercent10" class="percentagedisplayinner">
+                                    <div id="farmpercent100" class="percentagedisplayinner"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p class="ps">The ultimate food source of the food source. Those food will be raw, but do you think Snorlax will care?</p>
+                        <p class="ps changelog-quote block">"Mob farms work as well. Gunpowder, bones, iron ingots... Delicious."</p>
+                        <br>
+                        <p id="farmdisplay">Cost: KGPS:</p>
+                        <br>
+                        <p id="farmdisplay2" >Total KGPS:</p>
+                    </div>
+                    <div id="castle" class="shopitemdisplay">
+                        <img class="img32px60" src="assets/images/icons-food/castle.png">
+                        <h1 class="h1s shopitem-label" id="castlecountdisplay">0</h2>   <h2 class="shopitem-label">Castles</h2>
+                        <button type="button" class="shopitem-button" onclick="buyfood(5)">Purchase x 1</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(5,10)">Purchase x 10</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(5,100)">Purchase x 100</button>
+                        <div class="percentagedisplay">
+                            <div id="castlepercent" class="percentagedisplayinner">
+                                <div id="castlepercent10" class="percentagedisplayinner">
+                                    <div id="castlepercent100" class="percentagedisplayinner"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p class="ps">Food. No doubt. Peaches taste great, but most of the time they are in another castle.</p>
+                        <p class="ps changelog-quote block">"Mushrooms and nuts works as well, but peaches taste much better"</p>
+                        <br>
+                        <p id="castledisplay">Cost: KGPS:</p>
+                        <br>
+                        <p id="castledisplay2" >Total KGPS:</p>
+                    </div>
+                    <div id="asteroid" class="shopitemdisplay">
+                        <img class="img32px60" src="assets/images/icons-food/asteroid.png">
+                        <h1 class="h1s shopitem-label" id="asteroidcountdisplay">0</h2>   <h2 class="shopitem-label">Asteroids</h2>
+                        <button type="button" class="shopitem-button" onclick="buyfood(6)">Purchase x 1</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(6,10)">Purchase x 10</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(6,100)">Purchase x 100</button>
+                        <div class="percentagedisplay">
+                            <div id="asteroidpercent" class="percentagedisplayinner">
+                                <div id="asteroidpercent10" class="percentagedisplayinner">
+                                    <div id="asteroidpercent100" class="percentagedisplayinner"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p class="ps">When you run out of food on Earth you gotta leave, and these potato-looking and mineral-rich objects are the best option</p>
+                        <br>
+                        <p id="asteroiddisplay">Cost: KGPS:</p>
+                        <br>
+                        <p id="asteroiddisplay2" >Total KGPS:</p>
+                    </div>
+                    <div id="portal" class="shopitemdisplay">
+                        <img class="img32px60" src="assets/images/icons-food/portal.png">
+                        <h1 class="h1s shopitem-label" id="portalcountdisplay">0</h2>   <h2 class="shopitem-label">Portals</h2>
+                        <button type="button" class="shopitem-button" onclick="buyfood(7)">Purchase x 1</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(7,10)">Purchase x 10</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(7,100)">Purchase x 100</button>
+                        <div class="percentagedisplay">
+                            <div id="portalpercent" class="percentagedisplayinner">
+                                <div id="portalpercent10" class="percentagedisplayinner">
+                                    <div id="portalpercent100" class="percentagedisplayinner"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p class="ps">Portal to an Isekai with infinite food, such us our beloved emergency food Paimon. It also allows Snolax to reincarnate as a slime. With a sussy base KGPS of 177013 (Snorlax is 18+ btw)</p>
+                        <p class="ps changelog-quote block">"baka" - Snorlax-chan</p>
+                        <br>
+                        <p id="portaldisplay">Cost: KGPS:</p>
+                        <br>
+                        <p id="portaldisplay2" >Total KGPS:</p>
+                    </div>
+                    <div id="fatconvertor" class="shopitemdisplay">
+                        <img class="img32px60" src="assets/images/icons-food/fatconvertor.png">
+                        <h1 class="h1s shopitem-label" id="fatconvertorcountdisplay">0</h2>   <h2 class="shopitem-label">Fat Convertors</h2>
+                        <button type="button" class="shopitem-button" onclick="buyfood(8)">Purchase x 1</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(8,10)">Purchase x 10</button>
+                        <button type="button" class="shopitem-button" onclick="buyfoodn(8,100)">Purchase x 100</button>
+                        <div class="percentagedisplay">
+                            <div id="fatconvertorpercent" class="percentagedisplayinner">
+                                <div id="fatconvertorpercent10" class="percentagedisplayinner">
+                                    <div id="fatconvertorpercent100" class="percentagedisplayinner"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p class="ps">Turns fat back into food, and Snorlax eats them for more fat. Science doesn't exist.</p>
+                        <p class="ps changelog-quote block">"It never existed in the first place"</p>
+                        <br>
+                        <p id="fatconvertordisplay">Cost: KGPS:</p>
+                        <br>
+                        <p id="fatconvertordisplay2" >Total KGPS:</p>
+                    </div>
+                </div>
+
+                <div class="tab" id="evolutionshop">
+                    <p>A second food shop unlocked after completing certain mission sets. Includes a higher tier version of the Basic Shop food such as Fishblocks.</p>
+                    <div id="fishblock" class="shopitemdisplay">
+                        <img class="img32px60" src="assets/images/icons-food/fishblock.png">
+                        <h1 class="h1s shopitem-label" id="fishblockcountdisplay">0</h2>   <h2 class="shopitem-label">Fishblocks</h2>
+                        <button type="button" class="shopitem-button" onclick="buyfood(9)">Purchase x 1</button>
+                        <div class="percentagedisplay">
+                            <div id="fishblockpercent" class="percentagedisplayinner"></div>
+                        </div>
+                        <br>
+                        <p class="ps">Fishball, but it's a huge cube instead of a tiny ball. They can be used to construct buildings that are strong enough to support snorlax's weight, but the entire building will eventually be eaten by Snorlax.</p>
+                        <p class="ps changelog-quote block">"Minecraft"</p>
+                        <br>
+                        <p id="fishblockdisplay">Cost: KGPS:</p>
+                        <br>
+                        <p id="fishblockdisplay2" >Total KGPS:</p>
+                    </div>
+                </div>
+                <div class="tab" id="ascensionshop">
+                    <p>A third food shop unlocked after completing certain mission sets. Includes an even higher tier version of the Basic Shop food such as Heavenly Fishballs.</p>
+                </div>
+                <div class="tab" id="upgrades">
+                    <p>Upgrades goes here.</p>
+                </div>
+                <div class="tab" id="isekaiportal">
+                    <p>A gacha system that uses Catalyst or an item equivalent to genshin fates (Golden fishballs or fat blobs maybe?) to wish for different equipment that boosts different aspects of the game (For example, the head equipment Catears boosts Portal KGPS by +50%, and the hand equipment Drills increases Mining drops by +75%). Unlocks after buying a portal.</p>
+                </div>
+                <div class="tab" id="mining">
+                    <div style="display: inline-block;width: 350px;">
+                        <div style="padding:10px;width:326px;border:2px solid #505050;border-radius:10px;background:rgba(0,0,0,0.2)">
+                            <h1 class="h1s" id="stam">7</h1><h2>&nbsp;Stamina</h2><br>
+                            <h2>Next Stamina in&nbsp;</h2><h1 class="h1s" id="nextstam">2</h1><h2>&nbsp;Achievements</h2><br>
+                            <p class="ps">1 stamina is obtained every 2 achis.</p><br>
+                            <p class="ps">1 stamina is required per block mined.</p><br>
+                        </div>
+                        <button id="minebutton" class="locked" disabled="true" onclick="mine()">Cannot Mine (Nothing Selected)</button>
+                        <canvas id="miningcanvas" width="320" height="640" style="width:320px;height:640px;margin:15px;" onclick="sel(event)"></canvas>
+                    </div>
+                    <div style="display: inline-block;height: 100px;width: 520px;vertical-align: top;">
+                        <div class="infobox" id="fishstick">
+                            <img class="img50px" src="assets/images/icons-mine-items/fishstick.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="fishstickamount">0</h2>
+                        </div>
+                        <div class="infobox" id="GoldenFishball">
+                            <img class="img50px" src="assets/images/icons-main/goldenfishball.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="GoldenFishballamount">0</h2>
+                        </div>
+                        <div class="infobox" id="stone">
+                            <img class="img50px" src="assets/images/icons-mine-items/stone.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="stoneamount">0</h2>
+                        </div>
+                        <div class="infobox" id="refinedstone">
+                            <img class="img50px" src="assets/images/icons-mine-items/refinedstone.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="refinedstoneamount">0</h2>
+                        </div>
+                        <div class="infobox" id="darkstone">
+                            <img class="img50px" src="assets/images/icons-mine-items/darkstone.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="darkstoneamount">0</h2>
+                        </div>
+                        <div class="infobox" id="refineddarkstone">
+                            <img class="img50px" src="assets/images/icons-mine-items/refineddarkstone.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="refineddarkstoneamount">0</h2>
+                        </div>
+                        <div class="infobox" id="darkstuff">
+                            <img class="img50px" src="assets/images/icons-mine-items/darkstuff.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="darkstuffamount">0</h2>
+                        </div>
+                        <div class="infobox" id="coal">
+                            <img class="img50px" src="assets/images/icons-mine-items/coal.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="coalamount">0</h2>
+                        </div>
+                        <div class="infobox" id="haematite">
+                            <img class="img50px" src="assets/images/icons-mine-items/haematite.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="haematiteamount">0</h2>
+                        </div>
+                        <div class="infobox" id="iron">
+                            <img class="img50px" src="assets/images/icons-mine-items/iron.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="ironamount">0</h2>
+                        </div>
+                        <div class="infobox" id="refinediron">
+                            <img class="img50px" src="assets/images/icons-mine-items/refinediron.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="refinedironamount">0</h2>
+                        </div>
+                        <div class="infobox" id="silver">
+                            <img class="img50px" src="assets/images/icons-mine-items/silver.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="silveramount">0</h2>
+                        </div>
+                        <div class="infobox" id="refinedsilver">
+                            <img class="img50px" src="assets/images/icons-mine-items/refinedsilver.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="refinedsilveramount">0</h2>
+                        </div>
+                        <div class="infobox" id="gold">
+                            <img class="img50px" src="assets/images/icons-mine-items/gold.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="goldamount">0</h2>
+                        </div>
+                        <div class="infobox" id="refinedgold">
+                            <img class="img50px" src="assets/images/icons-mine-items/refinedgold.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="refinedgoldamount">0</h2>
+                        </div>
+                        <div class="infobox" id="lumium">
+                            <img class="img50px" src="assets/images/icons-mine-items/lumium.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="lumiumamount">0</h2>
+                        </div>
+                        <div class="infobox" id="diamond">
+                            <img class="img50px" src="assets/images/icons-mine-items/diamond.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="diamondamount">0</h2>
+                        </div>
+                        <div class="infobox" id="refineddiamond">
+                            <img class="img50px" src="assets/images/icons-mine-items/refineddiamond.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="refineddiamondamount">0</h2>
+                        </div>
+                        <div class="infobox" id="crystal">
+                            <img class="img50px" src="assets/images/icons-mine-items/crystal.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="crystalamount">0</h2>
+                        </div>
+                        <div class="infobox" id="soulstone">
+                            <img class="img50px" src="assets/images/icons-mine-items/soulstone.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="soulstoneamount">0</h2>
+                        </div>
+                        <div class="infobox" id="soulgem">
+                            <img class="img50px" src="assets/images/icons-mine-items/soulgem.png" style="margin: auto;display: block;">
+                            <h2 style="width: 100%;text-align: center;" id="soulgemamount">0</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab" id="exploring">
+                    <p>Explore for different raw materials and resources for Alchemy and Research. There will be a loot table like dh games</p>
+                </div>
+                <div class="tab" id="alchemy">
+                    <p>Craft raw ore and materials into useful items that boost different aspects of the game. Some equipments will be craftable</p>
+                </div>
+                <div class="tab" id="research">
+                    <p>Uses different resources obtained from Mining, Exploring, and Alchemy for research, which boosts different aspects of the game. For example, the research "Matter Conversion I" requires 2000 Catalyst and 5 fat blobs and takes 3 hours to complete, which boosts fat convertor KGPS by +25%.</p>
+                </div>
+                <div class="tab" id="missions">
+                    <div class="missionsdisplay" id="s1" style="display:none">
+                        <h2>Mission Set 1</h2>
+                        <div class="missiondisplay" id="m10d">
+                            <h2 class="mission" id="m10">Reach a total of 50000 KG (0/50000.0)</h2>
+                            <h2 class="h2s" style="padding:3px">Rewards:</h2>
+                            <img class="img16px" src="assets/images/icons-main/catalyst.png" style="display: inline;">
+                            <h2 class="h2s" style="color:white">x50 , KGPS Multi + 5%</h2>
+                            <button class="claim locked" id="m10b" onclick="mclaim(10)">Claim</button>
+                        </div>
+                        <div class="missiondisplay" id="m11d">
+                            <h2 class="mission" id="m11">Reach 50 KGPS from fishballs (0/50.0)</h2>
+                            <h2 class="h2s" style="padding:3px">Rewards:</h2>
+                            <img class="img16px" src="assets/images/icons-main/catalyst.png" style="display: inline;">
+                            <h2 class="h2s" style="color:white">x50 , Fishball KGPS Multi + 15%</h2>
+                            <button class="claim locked" id="m11b" onclick="mclaim(11)">Claim</button>
+                        </div>
+                        <div class="missiondisplay" id="m12d">
+                            <h2 class="mission" id="m12">Reach 125 KGPS from burgers (0/125.0)</h2>
+                            <h2 class="h2s" style="padding:3px">Rewards:</h2>
+                            <img class="img16px" src="assets/images/icons-main/catalyst.png" style="display: inline;">
+                            <h2 class="h2s" style="color:white">x50 , Burger KGPS Multi + 15%</h2>
+                            <button class="claim locked" id="m12b" onclick="mclaim(12)">Claim</button>
+                        </div>
+                        <div class="missiondisplay" id="m13d">
+                            <h2 class="mission" id="m13">Reach 250 KGPS from restaurants (0/250.0)</h2>
+                            <h2 class="h2s" style="padding:3px">Rewards:</h2>
+                            <img class="img16px" src="assets/images/icons-main/catalyst.png" style="display: inline;">
+                            <h2 class="h2s" style="color:white">x50 , Restaurant KGPS Multi + 15%</h2>
+                            <button class="claim locked" id="m13b" onclick="mclaim(13)">Claim</button>
+                        </div>
+                        <div class="missiondisplay" id="m14d">
+                            <h2 class="mission" id="m14">Obtain 2 Factories (0/2)</h2>
+                            <h2 class="h2s" style="padding:3px">Rewards:</h2>
+                            <img class="img16px" src="assets/images/icons-main/catalyst.png" style="display: inline;">
+                            <h2 class="h2s" style="color:white">x50 , </h2>
+                            <img class="img16px" src="assets/images/icons-main/coin.png" style="display: inline;">
+                            <h2 class="h2s" style="color:white">x50000</h2>
+                            <button class="claim locked" id="m14b" onclick="mclaim(14)">Claim</button>
+                        </div>
+                        <div class="missiondisplay" id="m15d">
+                            <h2 class="mission" id="m15">Click 2222 times (0/2222)</h2>
+                            <h2 class="h2s" style="padding:3px">Rewards:</h2>
+                            <img class="img16px" src="assets/images/icons-main/catalyst.png" style="display: inline;">
+                            <h2 class="h2s" style="color:white">x50 , MPC + 5%</h2>
+                            <button class="claim locked" id="m15b" onclick="mclaim(15)">Claim</button>
+                        </div>
+                        <div class="missiondisplay" id="m16d">
+                            <h2 class="mission" id="m16">Hit a Critical Click 50 times (0/50)</h2>
+                            <h2 class="h2s" style="padding:3px">Rewards:</h2>
+                            <img class="img16px" src="assets/images/icons-main/catalyst.png" style="display: inline;">
+                            <h2 class="h2s" style="color:white">x50 , CRIT Rate + 3%, CRIT DMG + 30%</h2>
+                            <button class="claim locked" id="m16b" onclick="mclaim(16)">Claim</button>
+                        </div>
+                        <div class="missiondisplay" id="m17d">
+                            <h2 class="mission" id="m17">Buy 12 Upgrades (0/12)</h2>
+                            <h2 class="h2s" style="padding:3px">Rewards:</h2>
+                            <img class="img16px" src="assets/images/icons-main/catalyst.png" style="display: inline;">
+                            <h2 class="h2s" style="color:white">x50 , KGPS Multi + 5%</h2>
+                            <button class="claim locked" id="m17b" onclick="mclaim(17)">Claim</button>
+                        </div>
+                        <div class="missiondisplay" id="m18d">
+                            <h2 class="mission" id="m18">Get 24 achievements (0/24)</h2>
+                            <h2 class="h2s" style="padding:3px">Rewards:</h2>
+                            <img class="img16px" src="assets/images/icons-main/catalyst.png" style="display: inline;">
+                            <h2 class="h2s" style="color:white">x50 , KGPS Multi + 3%</h2>
+                            <button class="claim locked" id="m18b" onclick="mclaim(18)">Claim</button>
+                        </div>
+                        <div class="missiondisplay" id="m19d">
+                            <h2 class="mission" id="m19">Attempt to enter the mines</h2>
+                            <h2 class="h2s" style="padding:3px">Rewards:</h2>
+                            <img class="img16px" src="assets/images/icons-main/catalyst.png" style="display: inline;">
+                            <h2 class="h2s" style="color:white">x25</h2>
+                            <button class="claim locked" id="m19b" onclick="mclaim(19)">Claim</button>
+                        </div>
+                        <div class="rewarddisplay" id="s1r">
+                            <div style="flex-grow:1;">
+                                <img class="img50px" src="assets/images/icons-main/catalyst.png" style="margin:auto; display:block;"><br>
+                                <h2 class="h2reward">250</h2>
+                            </div>
+                            <div style="flex-grow:1;">
+                                <img class="img50px" src="assets/images/icons-main/goldenfishball.png" style="margin:auto; display:block;"><br>
+                                <h2 class="h2reward">1</h2>
+                            </div>
+                            <div style="flex-grow:1;">
+                                <img class="img50px" src="assets/images/icons-tabs/mining.png" style="margin:auto; display:block;"><br>
+                                <h2 class="h2reward">Unlocks</h2>
+                            </div>
+                            <div style="flex-grow:1;">
+                                <img class="img50px" src="assets/images/icons-tabs/alchemy.png" style="margin:auto; display:block;"><br>
+                                <h2 class="h2reward">Unlocks</h2>
+                            </div>
+                        </div>
+                        <button class="bigclaim locked" id="s1b" onclick="sclaim(1)">Claim (0/10)</button>
+                    </div>
+                    <div class="missionsdisplay" id="s2" style="display:none">to be added</div>
+                </div>
+                <div class="tab" id="achievements">
+                    <div id="achiinfo" class="shopitemdisplay">
+                        <img class="img50" id="achiicon" src="assets/images/icons-achievements/achievement-locked.png">
+                        <h1 class="h1s shopitem-label" id="achiname">Click on an achievement slot to view details</h1>
+                        <br>
+                        <p class="ps" id="achidesc">desc</p>
+                        <p class="ps changelog-quote block" id="achiquote">"quote"</p>
+                        <br>
+                    </div>
+                        
+                </div>
+                <div class="tab" id="infosettings">
+                    <h2 class="infosettingsheading">Statistics</h2>
+                    <h2 class="h2s" style="padding-right:10px;">KG: </h2><h2 id="infoKG" class="h2s" style="color:white">000 Qa</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Money: </h2><h2 id="infoMoney" class="h2s" style="color:white">000 Qa</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Total Money Obtained: </h2><h2 id="infoTMoney" class="h2s" style="color:white">000 Qa</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Raw KGPS: </h2><h2 id="infoRKGPS" class="h2s" style="color:white">000 Qa</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">KGPS Multi: </h2><h2 id="infoMKGPS" class="h2s" style="color:white">+0%</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Total KGPS: </h2><h2 id="infoTKGPS" class="h2s" style="color:white">000 Qa</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Raw MPC: </h2><h2 id="infoRMPC" class="h2s" style="color:white">000 Qa</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">MPC Multi: </h2><h2 id="infoMMPC" class="h2s" style="color:white">+0%</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Total MPC: </h2><h2 id="infoTMPC" class="h2s" style="color:white">000 Qa</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Total Shop Items: </h2><h2 id="infoShop" class="h2s" style="color:white">0</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Crit Click Rate: </h2><h2 id="infoCRate" class="h2s" style="color:white">0.00%</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Crit Click Damage Bonus: </h2><h2 id="infoCDmg" class="h2s" style="color:white">50.0%</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Manual Clicks: </h2><h2 id="infoMClick" class="h2s" style="color:white">0</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Crit Clicks: </h2><h2 id="infoCClick" class="h2s" style="color:white">0</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Upgrades: </h2><h2 id="infoUps" class="h2s" style="color:white">0</h2><br>
+                    <h2 class="h2s" style="padding-right:10px;">Achievements: </h2><h2 id="infoAchis" class="h2s" style="color:white">0</h2><br>
+                    <br>
+                    <h2 class="infosettingsheading">Alpha stuff</h2>
+                    <h2 class="h2s">Debug Mode</h2><br>
+                    <button id="toggledebug" onclick=toggledebug();>OFF</button>
+                </div>
+            </div>
+            <div id="notifsdisplay">
+                <div class="notifs" id="notifsmore" style="display:none;height:30px">
+                    <p class="ps" id="notifsmorecontent" style="left:10px;top:10px;">+0 more</p>
+                </div>
+                <div class="notifs" id="notifs1" style="display:none;">
+                    <img class="img50px notifsicon" id="notifs1icon" src="assets/images/icons-achievements/achievement-locked.png">
+                    <h2 class="notifshead" id="notifs1header">Achievement Unlocked!</h2>
+                    <h1 class="h1s notifsname" id="notifs1name">Achi Name</h1>
+                    <p class="ps notifsdesc" id="notifs1desc">obtain something</p>
+                </div>
+                <div class="notifs" id="notifs2" style="display:none;">
+                    <img class="img50px notifsicon" id="notifs2icon" src="assets/images/icons-achievements/achievement-locked.png">
+                    <h2 class="notifshead" id="notifs2header">Achievement Unlocked!</h2>
+                    <h1 class="h1s notifsname" id="notifs2name">Achi Name</h1>
+                    <p class="ps notifsdesc" id="notifs2desc">obtain something</p>
+                </div>
+                <div class="notifs" id="notifs3" style="display:none;">
+                    <img class="img50px notifsicon" id="notifs3icon" src="assets/images/icons-achievements/achievement-locked.png">
+                    <h2 class="notifshead" id="notifs3header">Achievement Unlocked!</h2>
+                    <h1 class="h1s notifsname" id="notifs3name">Achi Name</h1>
+                    <p class="ps notifsdesc" id="notifs3desc">obtain something</p>
+                </div>
+                <div id="notifscross" style="display:none;" onclick=clearnotifs();><p class="ps">X</p></div>
+            </div>
+            
+        </div>
+        <template id="floating-text-template">
+            <h1 class="floating-text" onclick=snorlaxclick(event);></h1>
+        </template>
+        <template id="save-notif-template">
+            <div class="notifs" style="height:30px">Saved</div>
+        </template>
+    </div>
+
+    
+
+</body>
+<script>
+</script>
+</html>

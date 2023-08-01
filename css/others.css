@@ -1,0 +1,129 @@
+.smalllogo{
+    height: 30px;
+    width: 100px;
+    margin: 4px;
+}
+.changelog-others{
+    color: rgb(0,150,0);
+}
+.changelog-additions{
+    color: rgb(150,0,0);
+}
+.changelog-subtractions{
+    color: rgb(0,0,150);
+}
+.changelog-fixes{
+    color: rgb(150,0,150);
+}
+.changelog-changes{
+    color: rgb(150,150,0);
+}
+.changelog-quote{
+    font-style: italic;
+    color: #AAAAAA;
+    font-family: 'Courier New', Courier, monospace;
+}
+.levelbutton{
+    background: url(../assets/images/icons-main/level.png);
+    padding: 0px;
+    border: 0px;
+    color: #37c6ff;
+    font-family: SAO-UI;
+    font-weight: bolder;
+    font-size: 1.2em;
+    width: 50px; 
+    height: 50px;
+    display: inline-block;
+}
+.snorlax-button{
+    width:240px;
+    height:240px;
+    border: none;
+    background: url(../assets/images/main/snorlax1.png);
+    background-repeat: no-repeat;
+    background-size: 240px 240px;
+    animation-name: breath;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+.shopitem-label{
+    padding-top:10px;
+    padding-bottom:10px;
+    vertical-align:top;
+}
+.shopitem-button{
+    vertical-align: top;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+#loginload{
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:30px;
+    color:#999999
+}
+.infosettingsheading{
+    display: block;
+    color: rgb(255,50,50);
+    padding-top:15px;
+    padding-bottom:15px;
+}
+.floating-text{
+    position:absolute;
+    color:#CCCCCC;
+    animation-name: fade;
+    animation-duration:5s;
+    user-select: none;
+}
+.claim{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    height: 30px;
+    width: 60px;
+    border: none;
+    border-radius: 10px;
+}
+.unlocked{
+    background: linear-gradient(#0AD,#07A);
+    box-shadow: 2px 2px #048;
+}
+.locked{
+    background: linear-gradient(#AAA,#777);
+    box-shadow: 2px 2px #444
+}
+.bigclaim{
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 40px;
+    border: none;
+}
+.h2reward{
+    margin-left:auto; 
+    margin-right:auto; 
+    display:block; 
+    text-align:center;
+}
+.infobox{
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    border: 2px solid #777;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}
+#minebutton{
+    height: 30px;
+    width: 320px;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    position: sticky;
+    top: 10px;
+}
