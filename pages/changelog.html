@@ -37,10 +37,11 @@
     tab icons
     the 90 achi icons
     main menu button icons
+    main menu save state 
     food div background
 
     BUGS:
-    015 clicking the red popup texts counted as a snorlax click
+    next: 017
 -->
 
 <!-- TO BE COMPLETED IN FUTURE VERSIONS
@@ -65,25 +66,29 @@
 <p class="ps block multiline">- Introduced Alchemy
     - Fishsticks can now be obtained by buying fishballs
     - Items can be crafted using catalyst and resources from mining
-        - 7 x pickaxe recipes
+        - 7 x pickaxe recipes (C000-006)
             - Fishstick pickaxe is crafted from 5 fishsticks and 10 catalyst providing a first pickaxe to mine stone.
             - Stone and darkstone pickaxe is crafted from 2 fishsticks, 3 stone/darkstone, 20 catalyst, and 1 darkstuff for darkstone pickaxe, which can mine haematite.
                 - Darkstone should be more duarble than stone, but durability isn't a thing for now.
             - Iron (smelted from haematite) pickaxe mines silver and gold, Lumium (alloy of silver and gold) pickaxe mines diamond, Diamond pickaxe mines soulstone, and Soulstone pickaxe mines soulgem. They cost 50/100/200/333 catalyst, 4//8/16/32 fishstick, and 3/3/3/2 of the respective resources.
-        - 3 x furnace recipes
+        - 3 x furnace recipes (C020-022)
             - Simple furnace cost 50 catalyst and 8 stone
             - Advanced furnace cost 200 catalyst and 4 refined stone, 4 refined darkstone. It gives a 20% chance of double output.
             - Dark furnace cost 200 catalyst and 8 refined darkstone, 8 darkstuff. It gives a 40% chance to burn the item and 60% chance to double output
             - Furnace smelts raw ores into material
-        - 1 x refinary recipe
+        - 1 x refinary recipe (C030)
             - Simple refinary cost 200 catalyst, 8 stone, and 4 iron
             - Refinary refine material into it's refined form
-        - 1 x alloy furnace recipe
+        - 1 x alloy furnace recipe (C040)
             - Simple alloy furnace cost 200 catalyst, 8 stone, and 4 iron
             - Alloy furnace mixes material into other material
-        - 7 x statue recipes
+        - 7 x statue recipes (C050-056)
             - Stone, darkstone, iron, silver, gold, diamond, crystal statues, each cost 10 of the refined material (except crystal which cannot be refined) and 10 darkstuff for darkstone, and 100/100/200/400/600/800/1000 catalyst.
             - It does nothing right now
+        - 3 x gold recipes (C060-062)
+            - Each triples the KGPS of a specific building
+            - Costs 1 Golden Fishball or Fat Blob, 1 Soulgem, 1000 catalyst, and a bunch of other stuff.
+            - It doesn't work now  
     - Furnace can smelt certain stuff using some time and some coal
         - Haematite is the only smeltable item for now, costing 1 coal and 8 seconds, giving iron.
         - I have no idea what else it should be able to smelt for now
@@ -96,7 +101,11 @@
         - Maybe iron+coal for steel later</p>
 <h2 class="h2s changelog-changes block">Changes</h2>
 <p class="ps block multiline"><b>Mining</b>
-- A strong enough pickaxe is now required to mine. Pickaxe doesn't have durability for now.</p>
+- A strong enough pickaxe is now required to mine. Pickaxe doesn't have durability for now.
+<b>Login</b>
+- There is now a label for the continue and restart buttons</p>
+<h2 class="h2s changelog-fixes block">Fixes</h2>
+<p class="ps block">- 015 clicking the red popup texts counted as a snorlax click</p>
 <br>
 <br>
 

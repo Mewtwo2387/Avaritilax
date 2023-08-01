@@ -37,7 +37,7 @@ function update(){
     if(debug){console.log('DEBUG: update @'+ (new Date().getTime() - startupdate) + 'ms');}
 }
 function snorlaxclick(event){
-    const template = document.getElementById('floating-text-template').content.cloneNode(true);
+    const template = document.getElementById('floating-text-snorlax-template').content.cloneNode(true);
     const element = template.querySelector('.floating-text');
     element.style.left = event.clientX + 'px'
     element.style.top = (event.clientY - 50) + 'px'
@@ -69,7 +69,7 @@ function navigate(tab,event){
     if(tab=='mining'||tab=='alchemy'){
         if(GD.currentset<=1){
             unlocked = false
-            floatingtext('Complete Mission Set 1 to Unlock!','#CC0000',event)
+            floatingtext('Complete Mission Set 1 to Unlock!','#CC0000',event,false)
         }
     }
     if(unlocked){
@@ -141,8 +141,13 @@ function infoupdate(){
     document.getElementById("infoUps").innerHTML = toText(GD.UpAmount, false);
     document.getElementById("infoAchis").innerHTML = toText(GD.AchiAmount, false);
 }
-function floatingtext(content,color,event){
-    const template = document.getElementById('floating-text-template').content.cloneNode(true);
+function floatingtext(content,color,event,snorlaxclick){
+    var template;
+    if(snorlaxclick){
+        template = document.getElementById('floating-text-snorlax-template').content.cloneNode(true);
+    }else{
+        template = document.getElementById('floating-text-template').content.cloneNode(true);
+    }
     const element = template.querySelector('.floating-text');
     element.style.left = event.clientX + 'px'
     element.style.top = (event.clientY - 50) + 'px'

@@ -34,7 +34,7 @@ function initachi(restart){
             }
         }
         if(debug){console.log('DEBUG: Achi init\'ed @'+ (new Date().getTime() - startloadachi) + 'ms');}
-        loadmissions();
+        initalchemy(restart)
     });
 }
 function viewachi(id){

@@ -16,6 +16,7 @@
     <script src="js/timer.js"></script>
     <script src="js/mine.js"></script>
     <script src="js/mission.js"></script>
+    <script src="js/alchemy.js"></script>
     <link rel="stylesheet" href="css/ani.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="css/others.css" type="text/css">
@@ -43,8 +44,10 @@
             </marquee>
             <img style="position:absolute; left:300px;" height="300px" src="assets/images/main/logo.png">
             <div class="logindiv" id="continue" style="top:500px" onclick="load(false)">
+                <h2 style="color:grey;display:flex;justify-content:center;align-items:center;width:350px;font-size:50px;">Continue</h2>
             </div>
             <div class="logindiv" id="restart" style="top:600px" onclick="load(true)">
+                <h2 style="color:grey;display:flex;justify-content:center;align-items:center;width:350px;font-size:50px;">Restart</h2>
             </div>
             <h2 id="loginload" style="display:none"></h2>
             <p style="position:absolute; bottom:50px;">Version: Alpha 1.1.2</p>
@@ -594,8 +597,11 @@
             </div>
             
         </div>
-        <template id="floating-text-template">
+        <template id="floating-text-snorlax-template">
             <h1 class="floating-text" onclick=snorlaxclick(event);></h1>
+        </template>
+        <template id="floating-text-template">
+            <h1 class="floating-text"></h1>
         </template>
         <template id="save-notif-template">
             <div class="notifs" style="height:30px">Saved</div>
