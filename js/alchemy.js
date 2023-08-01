@@ -68,5 +68,26 @@ function initalchemy(restart){
     loadmissions();
 }
 
-//buyalchemy
-
+function buyalchemy(id){
+    var itemlist = ['Catalyst','fishstick','GoldenFishball','stone','refinedstone','darkstone','refineddarkstone','darkstuff','coal','haematite','iron','refinediron','silver','refinedsilver','gold','refinedgold','lumium','diamond','refineddiamond','crystal','soulstone','soulgem']
+    var craftable = true
+    for(var j=0; j<itemlist.length; j++){
+        if(AlchemyList[id][itemlist[j]] != 0){
+            if(AlchemyList[id][itemlist[j]]>GD[itemlist[j]]){
+                craftable = false
+            }
+        }
+    }   
+    if(craftable){
+        for(var j=0; j<itemlist.length; j++){
+            if(AlchemyList[id][itemlist[j]] != 0){
+                GD[itemlist[j]] -= AlchemyList[id][itemlist[j]]
+            }
+        } 
+        boughtalchemy(id)
+    }         
+}
+function boughtalchemy(id){
+    document.getElementById('C'+toThreeDigit(id)).style.display = 'none';
+    GD.Alchemy = replace(GD.Alchemy,id,'2');
+}
