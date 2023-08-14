@@ -90,4 +90,7 @@ function buyalchemy(id){
 function boughtalchemy(id){
     document.getElementById('C'+toThreeDigit(id)).style.display = 'none';
     GD.Alchemy = replace(GD.Alchemy,id,'2');
+    if(AlchemyList[id].Type=='pick'){
+        if(GD.pickLevel<id){GD.pickLevel = id}
+    }
 }

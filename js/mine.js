@@ -142,6 +142,8 @@ function mineupdate(){
             document.getElementById(itemlist[i]).style.display = 'none'
         }
     }
+    var picklevel = ['None','Fishstick','Stone','Darkstone','Iron','Lumium','Diamond','Soulstone']
+    document.getElementById('pickaxename').innerHTML = picklevel[GD.pickLevel+1]
     checkmine();
 }
 

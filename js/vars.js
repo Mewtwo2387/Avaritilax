@@ -74,6 +74,7 @@ class gameData{
     crystal = 0
     soulstone = 0
     soulgem = 0
+    pickLevel = -1
 }
 var GD = new gameData
 

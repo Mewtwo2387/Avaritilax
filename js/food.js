@@ -60,6 +60,7 @@ function buyfood(id){
         GD.Money -= GD.Food[id].Cost;
         GD.Food[id].rawAmount++;
         GD.Food[id].rawCost *= 1.2;
+        if(id==0){GD.fishstick++}
         update();
         return true;
     }else{
@@ -70,6 +71,7 @@ function buyfoodn(id,n){
     if(GD.Money>=geometric(GD.Food[id].Cost,1.2,n)){
         GD.Money -= geometric(GD.Food[id].Cost,1.2,n);
         GD.Food[id].rawAmount+=n;
+        if(id==0){GD.fishstick+=n}
         GD.Food[id].rawCost *= 1.2**n;
         if(n==10 && GD.Achievements[1915]==1){
             unlockachi(1915);
