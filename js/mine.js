@@ -204,12 +204,69 @@ function checkmine(){
         document.getElementById('minebutton').innerHTML = 'Cannot Mine (No Stamina)'
     }else{ 
         if(GD.exposed[selx][sely]){
-            if(GD.mine[selx][sely]=='air'){
-                toggleminebutton(true)
-                document.getElementById('minebutton').innerHTML = 'Cannot Mine (Air)'
-            }else{
-                toggleminebutton(false)
-                document.getElementById('minebutton').innerHTML = 'Mine'
+            switch(GD.mine[selx][sely]){
+                case 'air':
+                    toggleminebutton(true)
+                    document.getElementById('minebutton').innerHTML = 'Cannot Mine (Air)'
+                    return;
+                case 'stone': case 'darkstone': case 'coal':
+                    if(GD.pickLevel<0){
+                        toggleminebutton(true)
+                        document.getElementById('minebutton').innerHTML = 'Cannot Mine (Fishstick pickaxe required!)'
+                    }else{
+                        toggleminebutton(false)
+                        document.getElementById('minebutton').innerHTML = 'Mine'
+                    }
+                    return;
+                case 'haematite': case 'haematiteD':
+                    if(GD.pickLevel<1){
+                        toggleminebutton(true)
+                        document.getElementById('minebutton').innerHTML = 'Cannot Mine (Stone pickaxe required!)'
+                    }else{
+                        toggleminebutton(false)
+                        document.getElementById('minebutton').innerHTML = 'Mine'
+                    }
+                    return;
+                case 'silver': case 'gold':
+                    if(GD.pickLevel<3){
+                        toggleminebutton(true)
+                        document.getElementById('minebutton').innerHTML = 'Cannot Mine (Iron pickaxe required!)'
+                    }else{
+                        toggleminebutton(false)
+                        document.getElementById('minebutton').innerHTML = 'Mine'
+                    }
+                    return;
+                case 'diamond': case 'fishball':
+                    if(GD.pickLevel<4){
+                        toggleminebutton(true)
+                        document.getElementById('minebutton').innerHTML = 'Cannot Mine (Lumium pickaxe required!)'
+                    }else{
+                        toggleminebutton(false)
+                        document.getElementById('minebutton').innerHTML = 'Mine'
+                    }
+                    return;
+                case 'soulstone': case 'crystal':
+                    if(GD.pickLevel<5){
+                        toggleminebutton(true)
+                        document.getElementById('minebutton').innerHTML = 'Cannot Mine (Diamond pickaxe required!)'
+                    }else{
+                        toggleminebutton(false)
+                        document.getElementById('minebutton').innerHTML = 'Mine'
+                    }
+                    return;
+                case 'soulgem':
+                    if(GD.pickLevel<6){
+                        toggleminebutton(true)
+                        document.getElementById('minebutton').innerHTML = 'Cannot Mine (Soulstone pickaxe required!)'
+                    }else{
+                        toggleminebutton(false)
+                        document.getElementById('minebutton').innerHTML = 'Mine'
+                    }
+                    return;
+                default:
+                    toggleminebutton(true)
+                    document.getElementById('minebutton').innerHTML = 'Ummm... what was that?'
+                    return;
             }
         }else{
             toggleminebutton(true)
