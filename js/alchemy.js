@@ -90,7 +90,20 @@ function buyalchemy(id){
 function boughtalchemy(id){
     document.getElementById('C'+toThreeDigit(id)).style.display = 'none';
     GD.Alchemy = replace(GD.Alchemy,id,'2');
-    if(AlchemyList[id].Type=='pick'){
-        if(GD.pickLevel<id){GD.pickLevel = id}
+    switch(AlchemyList[id].Type){
+        case 'pick':
+            if(GD.pickLevel<id){GD.pickLevel = id}
+            return;
+        case 'furnace':
+            if(GD.furnaceLevel<id-20){GD.furnaceLevel = id-20}
+            return;
+        case 'refinary':
+            if(GD.refinaryLevel<id-30){GD.refinaryLevel = id-30}
+            return;
+        case 'alloy':
+            if(GD.alloyLevel<id-40){GD.alloyLevel = id-40}
+            return;
+        default:
+            return;
     }
 }

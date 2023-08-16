@@ -144,6 +144,13 @@ function mineupdate(){
     }
     var picklevel = ['None','Fishstick','Stone','Darkstone','Iron','Lumium','Diamond','Soulstone']
     document.getElementById('pickaxename').innerHTML = picklevel[GD.pickLevel+1]
+    var furnacelevel = ['None','Simple','Advanced','Dark']
+    document.getElementById('furnacename').innerHTML = furnacelevel[GD.furnaceLevel+1]
+    var refinarylevel = ['None','Simple']
+    document.getElementById('refinaryname').innerHTML = refinarylevel[GD.refinaryLevel+1]
+    var alloylevel = ['None','Simple']
+    document.getElementById('alloyname').innerHTML = alloylevel[GD.alloyLevel+1]
+
     checkmine();
 }
 

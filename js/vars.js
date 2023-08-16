@@ -75,6 +75,9 @@ class gameData{
     soulstone = 0
     soulgem = 0
     pickLevel = -1
+    furnaceLevel = -1
+    refinaryLevel = -1
+    alloyLevel = -1
 }
 var GD = new gameData
 
