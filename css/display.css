@@ -91,6 +91,12 @@
     border: 2px solid #404040;
     overflow: scroll;
 }
+.miningtab{
+    display: inline-block;
+    height: 100px;
+    width: 520px;
+    vertical-align: top;
+}
 .navigatetab{
     height: 100px;
     width: 60px;
