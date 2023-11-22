@@ -292,3 +292,11 @@ function loadmines(){
     }
     contload();
 }
+
+function navigateMining(tab){
+    document.getElementById('miningitemstab').style.display = "none"
+    document.getElementById('furnacetab').style.display = "none"
+    document.getElementById('alloytab').style.display = "none"
+    document.getElementById('refinarytab').style.display = "none"
+    document.getElementById(tab).style.display = "inline-block"
+}

@@ -343,20 +343,20 @@
                         <button id="minebutton" class="locked" disabled="true" onclick="mine()">Cannot Mine (Nothing Selected)</button>
                         <canvas id="miningcanvas" width="320" height="640" style="width:320px;height:640px;margin:15px;" onclick="sel(event)"></canvas>
                     </div>
-                    <div class="miningtab" id="miningitems">
+                    <div class="miningtab" id="miningitemstab">
                         <div class="infobox" id="pickaxe">
                             <img class="img50px" src="assets/images/icons-alchemy/C000.png" style="margin: auto;display: block;">
                             <h2 style="width: 100%;text-align: center;" id="pickaxename">None</h2>
                         </div>
-                        <div class="infobox" id="furnace">
+                        <div class="infobox" id="furnace" onclick="navigateMining('furnacetab')">
                             <img class="img50px" src="assets/images/icons-alchemy/C000.png" style="margin: auto;display: block;">
                             <h2 style="width: 100%;text-align: center;" id="furnacename">None</h2>
                         </div>
-                        <div class="infobox" id="refinary">
+                        <div class="infobox" id="refinary" onclick="navigateMining('refinarytab')">
                             <img class="img50px" src="assets/images/icons-alchemy/C000.png" style="margin: auto;display: block;">
                             <h2 style="width: 100%;text-align: center;" id="refinaryname">None</h2>
                         </div>
-                        <div class="infobox" id="alloy">
+                        <div class="infobox" id="alloy" onclick="navigateMining('alloytab')">
                             <img class="img50px" src="assets/images/icons-alchemy/C000.png" style="margin: auto;display: block;">
                             <h2 style="width: 100%;text-align: center;" id="alloyname">None</h2>
                         </div>
@@ -446,13 +446,25 @@
                         </div>
                     </div>
                     <div class="miningtab" id="furnacetab">
-                        
+                        <button onclick="navigateMining('miningitemstab')">back</button>
+                        <h2>furnace goes here</h2>
+                        <button onclick="if(GD.haematite>0&&GD.coal>0){GD.haematite--;GD.coal--;GD.iron++}">test smelt iron</button>
                     </div>
                     <div class="miningtab" id="refinarytab">
-
+                        <button onclick="navigateMining('miningitemstab')">back</button>
+                        <h2>refinary goes here</h2>
+                        <button onclick="if(GD.stone>0&&GD.coal>0){GD.stone--;GD.coal--;GD.refinedstone++}">test refine stone</button>
+                        <button onclick="if(GD.darkstone>0&&GD.coal>0){GD.darkstone--;GD.coal--;GD.refineddarkstone++}">test refine darkstone</button>
+                        <button onclick="if(GD.iron>0&&GD.coal>1){GD.iron--;GD.coal-=2;GD.refinediron++}">test refine iron</button>
+                        <button onclick="if(GD.silver>0&&GD.coal>1){GD.silver--;GD.coal-=2;GD.refinedsilver++}">test refine silver</button>
+                        <button onclick="if(GD.gold>0&&GD.coal>1){GD.gold--;GD.coal-=2;GD.refinedgold++}">test refine gold</button>
+                        <button onclick="if(GD.diamond>0&&GD.coal>3){GD.diamond--;GD.coal-=4;GD.refineddiamond++}">test refine diamond</button>
+                    
                     </div>
                     <div class="miningtab" id="alloytab">
-
+                        <button onclick="navigateMining('miningitemstab')">back</button>
+                        <h2>alloy goes here</h2>
+                        <button onclick="if(GD.gold>0&&GD.silver>0&&GD.Catalyst>=10){GD.gold--;GD.silver--;GD.Catalyst-=10;GD.lumium++}">test alloy lumium</button>
                     </div>
                 </div>
                 <div class="tab" id="exploring">
