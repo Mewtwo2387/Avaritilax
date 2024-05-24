@@ -6,6 +6,8 @@ function save(){
         var LastSaved = new Date();
         document.getElementById("header-lastsaved").innerHTML = "Last Saved: " + LastSaved.toLocaleDateString(undefined, DateOptions) + " " + LastSaved.toLocaleTimeString('en-US');
         localStorage.setItem("GD",JSON.stringify(GD))
+        document.getElementById("notifsave").style.display = "block";
+        setTimeout(function(){document.getElementById("notifsave").style.display = "none";}, 5000);
         if(debug){console.log('DEBUG: Saved');}
     }else{
         if(debug){console.log('DEBUG: Not logged in, cannot save');}
@@ -37,6 +39,8 @@ function load(restart){
             console.log("DEBUG OFF");
             document.getElementById("toggledebug").innerHTML = "OFF";
         }
+        document.getElementById("toggleshorten").innerHTML = (GD.shortennumbers) ? "ON" : "OFF";
+        document.getElementById("autosaveinterval").value = GD.autosaveInterval || 60;
         if(debug){console.log('DEBUG: Loaded in previous data');}
     }else{
         document.getElementById("loginload").innerHTML = "Restarting"
@@ -55,9 +59,16 @@ function contload(){
     login = true;
     if(debug){console.log('DEBUG: loading complete @'+ (new Date().getTime() - startload) + 'ms');}
 }
-document.addEventListener('keydown', (event) => {
-    if(event.key = 's'){
-        save();
-        GD.save++;
+function setautosave(){
+    GD.autosaveInterval = document.getElementById("autosaveinterval").value;
+    if(debug){console.log('DEBUG: autosave set to ' + GD.autosaveInterval + 's');}
+}
+function preload(){
+    try{
+        GD = JSON.parse(localStorage['GD'])
+        document.getElementById("peek").innerHTML = `Level ${GD.level || 1} | ${GD.AchiAmount || 0} Achievements`
+    }catch(SyntaxError){
+        console.log("no save")
     }
-} , false )
+}
+setTimeout(preload, 200)

@@ -1,3 +1,5 @@
+var autosave = 0
+
 function toDHMS(){
     GD.Days = Math.floor(GD.TotalSeconds/86400);
     GD.Hours = Math.floor((GD.TotalSeconds%86400)/3600);
@@ -6,6 +8,11 @@ function toDHMS(){
 }
 function timertick(){
     GD.TotalSeconds++;
+    autosave++;
+    if(autosave>=GD.autosaveInterval){
+        save();
+        autosave = 0;
+    }
     toDHMS();
 }
 

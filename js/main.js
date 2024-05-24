@@ -140,6 +140,7 @@ function infoupdate(){
     document.getElementById("infoCClick").innerHTML = toText(GD.critClicks, false);
     document.getElementById("infoUps").innerHTML = toText(GD.UpAmount, false);
     document.getElementById("infoAchis").innerHTML = toText(GD.AchiAmount, false);
+    document.getElementById("infoAutosave").innerHTML = GD.autosaveInterval - autosave + 's';
 }
 function floatingtext(content,color,event,snorlaxclick){
     var template;
@@ -157,4 +158,13 @@ function floatingtext(content,color,event,snorlaxclick){
     setTimeout(function(){
         element.remove();
     },5000);
+}
+function toggleshorten(){
+    GD.shortennumbers = !GD.shortennumbers;
+    if(GD.shortennumbers){
+        document.getElementById("toggleshorten").innerHTML = "ON";
+    }else{
+        document.getElementById("toggleshorten").innerHTML = "OFF";
+    }
+    update();
 }

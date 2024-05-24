@@ -4,58 +4,42 @@
     <link rel="stylesheet" href="../css/others.css">
 </head>
 <body style="background-repeat: repeat-y;">
-<!-- TO BE COMPLETED IN 1.1.2
-    furnace
-    refinary
-    alloy
--->
 <!-- TO BE COMPLETED IN 1.1.x
     MINING:
-    remaining mining images
-    stamina progression
-    more mining achi
-    gradual change between stone and darkstone
-    pickaxe durability
-    reset mine after soulgem
-    press m to mine
-    mine tutorial
-    require lower tier thing to craft higher one
-
+    [h] remaining mining images
+    [l] stamina progression
+    [m] more mining achi
+    [m] gradual change between stone and darkstone
+    [m] pickaxe durability
+    [m] reset mine after soulgem
+    [l] mine tutorial
+    [h] require lower tier thing to craft higher one
+    [l] bomb / more efficient mining methods
 
     ALCHEMY:
-    alchemy achi
-    utility items
-    more smeltables and alloyables
-    furnace UI
-    furnace time requirement
-    furnace capacity
+    [m] alchemy achi
+    [l] utility items
+    [l] more smeltables and alloyables
+    [h] furnace UI
+    [h] furnace time requirement
+    [h] furnace capacity
 
     MISSIONS:
-    mission set 2
-    mission notif / green
-
-    SAVE:
-    auto save
-    save notif
+    [m] mission set 2
+    [l] mission notif / green
 
     OTHERS:
     buy max
     achi icon for no icon
     tab icons
-    tab icons
     the 90 achi icons
     main menu button icons
-    main menu save state 
-    tab icons 
-    the 90 achi icons
-    main menu button icons
-    main menu save state 
     food div background
     more food achis and ups 
 
     BUGS:
     017 Snorlax Click popups sometimes at wrong place
-    next: 018
+    next: 019
 -->
 
 <!-- TO BE COMPLETED IN FUTURE VERSIONS
@@ -82,9 +66,44 @@
     storyline
     more settings
     export/import data
-    achievement % (similar to cookie clicker milk)
-    online
+    achievement % bonuses (similar to cookie clicker milk)
+    seasonal events
+    popups (similar to cookie clicker golden cookies)
+    online save
 -->
+<h1 class="block">Alpha 1.1.3</h1>
+<p class="block">24/5/2024</p>
+<p class="ps block multiline changelog-quote">"And so we're back. Again"
+"Coming back with some minor QoL updates"</p>
+<h2 class="h2s changelog-additions block">Additions</h2>
+<p class="ps block multiline"><b>Hotkeys</b>
+- Introduced a bunch of hotkeys
+    - M to mine
+    - 1-9 to buy food
+        - alt to buy 10, ctrl to buy 100</p>
+<p class="ps block multiline changelog-quote">"20 minutes was spent in total debugging this, eventually learning about the existance of stuff like event.ctrlKey. And yet it still doesn't work for shift key combinations. Turns out, well, clicking shift+1 gives a ! instead."</p>
+<p class="ps block multiline">&nbsp;&nbsp;&nbsp;&nbsp;- qwertyuiop[] to switch tabs
+<b>Saving</b>
+- Added a notification for saving, which disappears in 5s.
+- Introduced Autosave
+    - Defaults to 60s, can be edited in settings to be between 10 and 600s.</p>
+<p class="ps block multiline changelog-quote">"I'm the only person that can fuck up a simple autosave interval input for 10 whole minutes"</p>
+<p class="ps block multiline"><b>Settings</b>
+- Added an option to toggle between long (1.1 Million) and short (1.1M) suffixes</p>
+<h2 class="h2s changelog-changes block">Changes</h2>
+<p class="ps block multiline"><b>Main Menu</b>
+- The continue button now shows the current save state (level and achievements completed)
+- Updated the colours of the button text
+<h2 class="h2s changelog-fixes block">Fixes</h2>
+<p class="ps block">- 018 mining tabs arent hidden by default</p>
+<h2 class="h2s changelog-others block">Roadmap</h2>
+<p class="ps block multiline">As I've mentioned before in ICGD, this game progresses quadratically instead of linearly compared to other idle games. Instead of having a currency that can buy stuff that generates that currency, we have stuff that generates KG, and KG generates money via clicks, then stuff costs money. Spending does not decrease KG. Essentially stuff generates money per second per second given you're clicking at the same speed. This makes idle play incredibly overpowered.
+This game was modelled after Cookie Clicker, with those CC-styled achievements and upgrades, which, well, stuff doesn't go up this quickly. And I'm playing Antimatter Dimensions rn and that goes up really quickly with layers of stuff generating stuff just like Swarmsim. So either I keep the current CC-style or straight up change to an AD-styled game, bringing in layers of generation and prestige, hit infinity, go break-infinity.js, turn Snorlax into a black hole. (I mean, isn't that the point)
+The thing is, stuff like mining and exploration is gonna have a hard time striving in this environment. They are meant to give some small boosts to progression, which wouldn't work when stuff is doubling every other second.
+Either way we're gonna follow what we left off a year ago and a1.1.x is gonna finish the mining stuff, a1.2.x will overhaul this horrendous UI with this horrendous changelog written in pure HTML.</p>
+<br>
+<br>
+
 
 <h1 class="block">Alpha 1.1.2</h1>
 <p class="block">19/1/2023 - 21/11/2023</p>

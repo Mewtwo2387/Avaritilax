@@ -46,6 +46,7 @@ class gameData{
 
     //Settings
      shortennumbers = true;
+     autosaveInterval = 60;
 
 
     //mine
